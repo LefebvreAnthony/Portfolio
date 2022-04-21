@@ -1,0 +1,56 @@
+.doors {
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_right {
+        top: 0;
+        right: 0;
+        background: no-repeat center/100% url("../img/bgRight.png");
+
+        & button {
+            @include buttons;
+
+            &:hover {
+                color: $darkness-color;
+                background-color: $light-color;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: url("../img/rightA.png");
+            top: 35%;
+            left: 0;
+
+        }
+    }
+
+    &_left {
+        background: no-repeat center/100% url("../img/bgLeft.png");
+
+        & button {
+            @include buttons($darkness-color);
+
+            &:hover {
+                color: $light-color;
+                background-color: $darkness-color;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: url("../img/leftA.png");
+            top: 35%;
+            right: 0;
+
+        }
+    }
+
+    &--active {
+        transition: all;
+    }
+}

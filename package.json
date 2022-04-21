@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Project portfolio",
+  "main": "script.js",
+  "scripts": {
+    "sass": "sass -w ./assets/sass/main.scss:./assets/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LefebvreAnthony/Portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LefebvreAnthony/Portfolio/issues"
+  },
+  "homepage": "https://github.com/LefebvreAnthony/Portfolio#readme",
+  "dependencies": {
+    "sass": "^1.50.1"
+  }
+}

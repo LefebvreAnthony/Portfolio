@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.doors {
+  position: absolute;
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doors_right {
+  top: 0;
+  right: 0;
+  background: no-repeat center/100% url("../img/bgRight.png");
+}
+.doors_right button {
+  border-radius: 0.8rem;
+  outline: 3px solid #EBEAEC;
+  border: none;
+  padding: 1rem 5rem;
+  background: transparent;
+  color: #EBEAEC;
+  cursor: pointer;
+  font-size: 4rem;
+  font-family: Hillshort;
+  letter-spacing: 0.5rem;
+  transition: all 0.4s ease;
+}
+.doors_right button:hover {
+  color: #181818;
+  background-color: #EBEAEC;
+}
+.doors_right::after {
+  position: absolute;
+  content: url("../img/rightA.png");
+  top: 35%;
+  left: 0;
+}
+.doors_left {
+  background: no-repeat center/100% url("../img/bgLeft.png");
+}
+.doors_left button {
+  border-radius: 0.8rem;
+  outline: 3px solid #181818;
+  border: none;
+  padding: 1rem 5rem;
+  background: transparent;
+  color: #181818;
+  cursor: pointer;
+  font-size: 4rem;
+  font-family: Hillshort;
+  letter-spacing: 0.5rem;
+  transition: all 0.4s ease;
+}
+.doors_left button:hover {
+  color: #EBEAEC;
+  background-color: #181818;
+}
+.doors_left::after {
+  position: absolute;
+  content: url("../img/leftA.png");
+  top: 35%;
+  right: 0;
+}
+.doors--active {
+  transition: all;
+}
+
+/*# sourceMappingURL=style.css.map */

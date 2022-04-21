@@ -1,0 +1,13 @@
+@mixin buttons($color:$light-color, $radius: .8rem, $border-size: 3px) {
+    border-radius: $radius;
+    outline: $border-size solid $color;
+    border: none;
+    padding: 1rem 5rem;
+    background: transparent;
+    color: $color;
+    cursor: pointer;
+    font-size: 4rem;
+    font-family: Hillshort;
+    letter-spacing: 0.5rem;
+    transition: all .4s ease;
+}
