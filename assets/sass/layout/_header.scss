@@ -42,7 +42,7 @@ header {
         width: 100%;
         font: bold 4.5rem $font-text;
         text-transform: uppercase;
-        background-color: $darkness-color;
+        background-color: var(--bgNav);
         text-align: center;
 
         li {

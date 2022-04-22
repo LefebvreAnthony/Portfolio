@@ -8,4 +8,5 @@ export function Project() {
     body.style.backgroundColor = "#EBEAEC";
     body.style.color = "#181818";
     Header(false, "Project");
+    headerController();
 };

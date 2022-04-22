@@ -59,7 +59,7 @@ header nav {
   width: 100%;
   font: bold 4.5rem Cormorant;
   text-transform: uppercase;
-  background-color: #181818;
+  background-color: var(--bgNav);
   text-align: center;
 }
 header nav li {
