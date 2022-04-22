@@ -1,15 +1,21 @@
 .doors {
     position: absolute;
+    z-index: 10;
     height: 100vh;
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 2s cubic-bezier(.93, .06, .72, .73);
 
     &_right {
         top: 0;
         right: 0;
-        background: no-repeat center/100% url("../img/bgRight.png");
+        background: no-repeat center/100% url("../img/background/bgRight.png");
+
+        &--active {
+            right: -50%;
+        }
 
         & button {
             @include buttons;
@@ -30,7 +36,13 @@
     }
 
     &_left {
-        background: no-repeat center/100% url("../img/bgLeft.png");
+        background: no-repeat center/100% url("../img/background/bgLeft.png");
+        top: 0;
+        left: 0;
+
+        &--active {
+            left: -50%;
+        }
 
         & button {
             @include buttons($darkness-color);
@@ -50,7 +62,4 @@
         }
     }
 
-    &--active {
-        transition: all;
-    }
 }
