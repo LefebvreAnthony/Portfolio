@@ -1,9 +1,8 @@
 "use-strict";
 
-export function AnimationNav() {
+export function AnimationsNav() {
     const nav = document.querySelector('nav');
     const svg = document.querySelectorAll("#bar_burger > svg > path");
-    console.log(svg);
     const KE1 = new KeyframeEffect(nav, [{ top: "-100%" }, { top: "0" }], { duration: 500, easing: "ease-in", fill: "forwards" });
     const KE2 = new KeyframeEffect(svg[0], { transformOrigin: "bottom left", transform: "translate(-18px, -17px) rotate(29deg)" }, {
         duration: 300,
@@ -16,4 +15,4 @@ export function AnimationNav() {
     const line2 = new Animation(KE3, document.timeline);
 
     return [navDownAnimation, line1, line2];
-}
+};

@@ -1,0 +1,52 @@
+main {
+    .main_project {
+        padding-top: 5rem;
+        display: grid;
+        grid-template: 80vh / 30vw 70vw;
+
+        figure {
+            padding-left: 10%;
+        }
+
+        &>div {
+            position: relative;
+            padding: 0 10%;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 65%;
+                border: 1px solid #181818;
+            }
+
+            h2 {
+                font: 3rem bold $font-text;
+            }
+
+            p {
+                padding-top: 3rem;
+                font: 2rem $font-text;
+            }
+
+            button {
+                margin: 13rem 0 0 40rem;
+                padding: 1.2rem 6rem;
+                font: 2rem bold $font-text;
+                border-radius: 1rem;
+                background-color: transparent;
+                cursor: pointer;
+            }
+
+        }
+
+        span {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            cursor: pointer;
+            opacity: .5;
+        }
+    }
+}

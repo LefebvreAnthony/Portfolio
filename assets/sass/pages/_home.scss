@@ -13,10 +13,6 @@
         right: 0;
         background: no-repeat center/100% url("../img/background/bgRight.png");
 
-        &--active {
-            right: -50%;
-        }
-
         & button {
             @include buttons;
 
@@ -39,10 +35,6 @@
         background: no-repeat center/100% url("../img/background/bgLeft.png");
         top: 0;
         left: 0;
-
-        &--active {
-            left: -50%;
-        }
 
         & button {
             @include buttons($darkness-color);

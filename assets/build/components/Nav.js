@@ -2,7 +2,6 @@
 
 
 export function Nav() {
-    const body = document.querySelector('body');
     return `
     <nav>
         <ul>
