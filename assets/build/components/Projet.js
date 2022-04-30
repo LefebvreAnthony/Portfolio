@@ -1,13 +1,17 @@
 "use-strict";
 
+import { arrowDown } from "../animations/project.animation.js";
+import { Arrows } from "./Arrows.js";
 import { Container } from "./Container.js";
+import { SvgMorph } from "./Morph.image.js";
 
 export function UnitProject() {
+    const arrows = Arrows;
     const container = Container.base();
-    container.className = "main_project"
+    container.className = "main_project";
     return container.innerHTML = `
         <figure>
-            <img src="./assets/img/imgProject.png" alt="img project" />
+            <img src="./assets/img/background/bgRight.png" alt="img project" />
         </figure>
         <div>
             <h2>Name project</h2>
@@ -15,9 +19,8 @@ export function UnitProject() {
             <button>See more</button>
         </div>
         <span>
-            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.5 21L35 38.5L52.5 21L59.5 24.5L35 49L10.5 24.5L17.5 21Z" fill="#222222"/>
-            </svg>
+            ${arrows.arrowDown("#181818")}
         </span>
+        ${SvgMorph()}
     `
 }

@@ -143,6 +143,11 @@ main .main_project {
 main .main_project figure {
   padding-left: 10%;
 }
+main .main_project figure img {
+  clip-path: url(#blob);
+  width: 100%;
+  height: 100%;
+}
 main .main_project > div {
   position: relative;
   padding: 0 10%;

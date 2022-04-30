@@ -1,8 +1,9 @@
 "use-strict";
 
-import { arrowDown } from "../animations/project.animation.js";
+import { arrowDown, blobImg } from "../animations/project.animation.js";
 
 export function projectController() {
     const animArrow = arrowDown();
     animArrow.play();
+    blobImg().play();
 }
