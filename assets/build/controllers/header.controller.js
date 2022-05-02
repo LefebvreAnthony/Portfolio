@@ -2,6 +2,7 @@
 
 import { AnimationHome2 } from "../animations/home.animation.js";
 import { AnimationsNav } from "../animations/nav.animation.js";
+import { navController } from "./nav.controller.js";
 
 export function headerController() {
     const nav = document.querySelector('nav');
@@ -31,4 +32,5 @@ export function headerController() {
         } else for (let i in animNav) animNav[i].reverse();
     });
 
+    navController();
 };

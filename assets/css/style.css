@@ -76,7 +76,6 @@ header nav li {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 2s cubic-bezier(0.93, 0.06, 0.72, 0.73);
 }
 .doors_right {
   top: 0;
@@ -134,6 +133,36 @@ header nav li {
   top: 35%;
   right: 0;
 }
+.doors_top {
+  position: absolute;
+  height: 50vh;
+  width: 100vw;
+  border-bottom: double #EBEAEC;
+  z-index: 1;
+  top: -50%;
+  background: #181818;
+  color: #EBEAEC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+.doors_bottom {
+  position: absolute;
+  height: 50vh;
+  width: 100vw;
+  border-top: double #181818;
+  z-index: 1;
+  bottom: -50%;
+  background: #EBEAEC;
+  color: #181818;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 4rem;
+}
 
 main .main_project {
   padding-top: 5rem;
@@ -142,23 +171,27 @@ main .main_project {
 }
 main .main_project figure {
   padding-left: 10%;
+  overflow: hidden;
+  position: relative;
+}
+main .main_project figure::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 65%;
+  border: 1px solid #181818;
 }
 main .main_project figure img {
   clip-path: url(#blob);
   width: 100%;
   height: 100%;
+  transform: translateX(700px);
 }
 main .main_project > div {
-  position: relative;
   padding: 0 10%;
-}
-main .main_project > div::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 65%;
-  border: 1px solid #181818;
+  transform: scaleY(0);
+  opacity: 1;
 }
 main .main_project > div h2 {
   font: 3rem bold Cormorant;

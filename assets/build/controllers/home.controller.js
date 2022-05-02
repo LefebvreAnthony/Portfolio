@@ -1,5 +1,7 @@
+"use-strict";
+
 import { AnimationHome } from "../animations/home.animation.js";
-import { About } from "../views/About.view.js";
+import { AboutView } from "../views/About.view.js";
 import { ProjectView } from "../views/project.view.js";
 
 export function homeController() {
@@ -12,5 +14,5 @@ export function homeController() {
         })
     })
     btn[0].addEventListener("click", ProjectView);
-    btn[1].addEventListener("click", About);
+    btn[1].addEventListener("click", AboutView);
 };

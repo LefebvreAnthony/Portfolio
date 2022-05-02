@@ -9,19 +9,29 @@ export function arrowDown() {
     return new Animation(kE1, document.timeline);
 };
 
-export function blobImg() {
-    let figure = document.querySelector(".main_project > figure");
-    console.log();
+export function animBlobImg() {
+    let figure = document.querySelector(".main_project > figure > img");
+
     let kE1 = new KeyframeEffect(figure,
+        { transform: "translateX(0)" }, { duration: 2000, fill: "forwards", delay: 1000, easing: "ease-out" }
+    );
+    return new Animation(kE1, document.timeline);
+};
+
+export function animContentProject() {
+    let content = document.querySelector('.project_description');
+
+    let kE1 = new KeyframeEffect(content,
         [
-            { transform: "scale(0)" },
-            { transform: "scale(1)" }
+            { opacity: "0" },
+            { transform: "scaleY(1)" }
         ],
         {
-            duration: 7000,
+            duration: 2000,
             fill: "forwards",
-            delay: 500
+            delay: 1000,
+            easing: "ease-out"
         }
-    );
+    )
     return new Animation(kE1, document.timeline);
 }
