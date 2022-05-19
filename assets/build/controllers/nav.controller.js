@@ -7,23 +7,27 @@ import { ProjectView } from "../views/project.view.js";
 export function navController() {
     let btns = document.querySelectorAll('li');
 
-    btns.forEach(btn => {
-        btn.style.cursor = "pointer";
-        btn.addEventListener('click', () => {
+    for (let i = 1; i < btns.length; i++) {
+
+        btns[i].style.cursor = "pointer";
+        btns[i].addEventListener('click', () => {
             for (let i in TransitionPage()) {
                 TransitionPage()[i].play();
             }
         })
-    });
+    }
 
     //& btn project nav
     btns[1].addEventListener("click", () => {
-        ProjectView();
+        setTimeout(() => {
+            ProjectView();
+        }, 1000)
     });
-
 
     //& btn about nav
     btns[2].addEventListener("click", () => {
-        AboutView();
+        setTimeout(() => {
+            AboutView();
+        }, 1000)
     })
 }

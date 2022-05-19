@@ -8,18 +8,20 @@ export function TransitionPage() {
         { top: "0" }
     ],
         {
-            duration: 1500,
-            endDelay: 500,
-            direction: "alternate"
+            duration: 1000,
+            easing: "ease-in",
+            direction: "alternate",
+            iterations: 2
         }
     );
     const KE2 = new KeyframeEffect(doorBottom, [
         { bottom: "0" }
     ],
         {
-            duration: 1500,
-            endDelay: 1500,
-            direction: "alternate"
+            duration: 1000,
+            easing: "ease-in",
+            direction: "alternate",
+            iterations: 2
         }
     );
 

@@ -1,7 +1,9 @@
 "use-strict";
 
 import { About } from "../components/About.js";
+import { Canvas } from "../components/Canvas.js";
 import { Header } from "../components/Header.js";
+import { AboutController } from "../controllers/About.controller.js";
 import { headerController } from "../controllers/header.controller.js";
 
 export function AboutView() {
@@ -11,4 +13,6 @@ export function AboutView() {
     Header(true, "About");
     headerController();
     About();
+    Canvas();
+    AboutController();
 };
