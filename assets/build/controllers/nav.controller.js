@@ -6,11 +6,15 @@ import { ProjectView } from "../views/project.view.js";
 
 export function navController() {
     let btns = document.querySelectorAll('li');
+    let texts = document.querySelectorAll(".text-transition");
 
     for (let i = 1; i < btns.length; i++) {
 
         btns[i].style.cursor = "pointer";
         btns[i].addEventListener('click', () => {
+            texts.forEach(text => {
+                text.textContent = btns[i].innerText;
+            })
             for (let i in TransitionPage()) {
                 TransitionPage()[i].play();
             }

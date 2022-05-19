@@ -17,6 +17,5 @@ export function NavAbout() {
     subNav.append(ul, SvgNavAbout());
     fragment.appendChild(subNav);
 
-
     return fragment;
 }

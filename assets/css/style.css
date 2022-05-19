@@ -148,9 +148,15 @@ header nav li {
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 10rem;
+  overflow: hidden;
+}
+.doors_top p {
+  position: absolute;
+  bottom: -20%;
 }
 .doors_bottom {
+  overflow: hidden;
   position: absolute;
   height: 50vh;
   width: 100vw;
@@ -163,10 +169,15 @@ header nav li {
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 10rem;
+}
+.doors_bottom p {
+  position: absolute;
+  top: -20%;
 }
 
 main .main_project {
+  position: relative;
   padding-top: 5rem;
   display: grid;
   grid-template: 80vh/30vw 70vw;
@@ -176,33 +187,26 @@ main .main_project figure {
   overflow: hidden;
   position: relative;
 }
-main .main_project figure::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 65%;
-  border: 1px solid #181818;
-}
 main .main_project figure img {
   clip-path: url(#blob);
   width: 100%;
   height: 100%;
   transform: translateX(700px);
 }
-main .main_project > div {
+main .main_project .project_description {
+  position: relative;
   padding: 0 10%;
   transform: scaleY(0);
   opacity: 1;
 }
-main .main_project > div h2 {
+main .main_project .project_description h2 {
   font: 3rem bold Cormorant;
 }
-main .main_project > div p {
+main .main_project .project_description p {
   padding-top: 3rem;
   font: 2rem Cormorant;
 }
-main .main_project > div button {
+main .main_project .project_description button {
   margin: 13rem 0 0 40rem;
   padding: 1.2rem 6rem;
   font: 2rem bold Cormorant;
@@ -211,16 +215,33 @@ main .main_project > div button {
   cursor: pointer;
   transition: 0.3s;
 }
-main .main_project > div button:hover {
+main .main_project .project_description button:hover {
   background-color: #181818;
   color: #EBEAEC;
 }
-main .main_project span {
+main .main_project .project_description--before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 65%;
+  border-right: 1px solid #181818;
+  width: 0;
+  background: #EBEAEC;
+}
+main .main_project #arrow-down {
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: 30vh;
   cursor: pointer;
   opacity: 0.5;
+}
+main .main_project #arrow-up {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  cursor: pointer;
+  opacity: 0.5;
+  display: none;
 }
 
 main .about {

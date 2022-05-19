@@ -1,6 +1,7 @@
 main {
 
     .main_project {
+        position: relative;
         padding-top: 5rem;
         display: grid;
         grid-template: 80vh / 30vw 70vw;
@@ -10,16 +11,6 @@ main {
             overflow: hidden;
             position: relative;
 
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
-                height: 65%;
-                border: 1px solid $darkness-color;
-            }
-
-
             img {
                 clip-path: url(#blob);
                 width: 100%;
@@ -28,7 +19,8 @@ main {
             }
         }
 
-        &>div {
+        .project_description {
+            position: relative;
             padding: 0 10%;
             transform: scaleY(0);
             opacity: 1;
@@ -56,14 +48,33 @@ main {
                     color: $light-color;
                 }
             }
+
+            &--before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 65%;
+                border-right: 1px solid $darkness-color;
+                width: 0;
+                background: $light-color;
+            }
         }
 
-        span {
+        #arrow-down {
             position: absolute;
             left: 50%;
-            bottom: 0;
+            bottom: 30vh;
             cursor: pointer;
             opacity: .5;
+        }
+
+        #arrow-up {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            cursor: pointer;
+            opacity: .5;
+            display: none;
         }
     }
 }

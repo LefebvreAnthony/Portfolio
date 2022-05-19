@@ -69,11 +69,18 @@
         align-items: center;
         justify-content: center;
         text-transform: uppercase;
-        font-size: 4rem;
+        font-size: 10rem;
+        overflow: hidden;
+
+        p {
+            position: absolute;
+            bottom: -20%;
+        }
 
     }
 
     &_bottom {
+        overflow: hidden;
         position: absolute;
         height: 50vh;
         width: 100vw;
@@ -86,7 +93,12 @@
         align-items: center;
         justify-content: center;
         text-transform: uppercase;
-        font-size: 4rem;
+        font-size: 10rem;
+
+        p {
+            position: absolute;
+            top: -20%;
+        }
     }
 
 

@@ -11,6 +11,7 @@ export function TransitionPage() {
             duration: 1000,
             easing: "ease-in",
             direction: "alternate",
+            fill: "forwards",
             iterations: 2
         }
     );
@@ -21,6 +22,7 @@ export function TransitionPage() {
             duration: 1000,
             easing: "ease-in",
             direction: "alternate",
+            fill: "forwards",
             iterations: 2
         }
     );
