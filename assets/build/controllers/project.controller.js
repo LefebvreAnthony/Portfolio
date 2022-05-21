@@ -15,12 +15,16 @@ export function projectController(project) {
     animContentProject().play();
 
     function trans() {
-        if (index < Projects.size) {
+        console.log(index);
+        if (index <= Projects.size) {
 
             animTransitionContent().play();
             animBlobImgReverse().play();
         }
-        setTimeout(() => arrowUp.toggle("hide"), 1800);
+        if (index == 2) setTimeout(() => arrowUp.classList.remove("hide"), 1800);
+        if (index == 1) setTimeout(() => arrowUp.classList.add("hide"), 500);
+        if (index == Projects.size - 1) setTimeout(() => arrowDown.classList.remove("hide"), 1800);
+        if (index == Projects.size) setTimeout(() => arrowDown.classList.add("hide"), 500);
     }
     function scroll(event) {
 
@@ -37,12 +41,12 @@ export function projectController(project) {
         }
     }
     arrowDown.addEventListener("click", () => {
-        index--;
+        index++;
         trans();
         setTimeout(() => project.next(), 500);
     });
     arrowUp.addEventListener("click", () => {
-        index++;
+        index--;
         trans();
         setTimeout(() => project.previous(), 500);
     });

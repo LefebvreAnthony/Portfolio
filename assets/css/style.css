@@ -207,7 +207,9 @@ main .main_project .project_description p {
   font: 2rem Cormorant;
 }
 main .main_project .project_description button {
-  margin: 13rem 0 0 40rem;
+  position: absolute;
+  right: 10%;
+  bottom: 30%;
   padding: 1.2rem 6rem;
   font: 2rem bold Cormorant;
   border-radius: 1rem;

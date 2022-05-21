@@ -48,6 +48,12 @@ export class ProjectContent {
         this.h2.textContent = this.project.h2;
         this.pDescription.textContent = this.project.desc;
         this.btnSee.textContent = "See more";
+        this.controllers();
+    }
+    controllers() {
+        this.btnSee.addEventListener("click", () => {
+            window.location.assign(this.project.link);
+        })
     }
     next() {
         let entries = Projects.entries();
