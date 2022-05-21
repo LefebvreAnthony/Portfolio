@@ -26,7 +26,7 @@ export function SvgNavAbout() {
 
     setInterval(() => {
 
-        if (window.getComputedStyle(doorsLeft).left.split("p")[0] <= -900) {
+        if (window.getComputedStyle(doorsLeft).left.split("p")[0] <= -700) {
             clearInterval(lolo)
             lolo = null;
         } else {

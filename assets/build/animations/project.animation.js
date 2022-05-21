@@ -38,7 +38,6 @@ export function animContentProject() {
 
 export function animTransitionContent() {
     let divBefore = document.querySelector(".project_description--before");
-    console.log(divBefore);
 
     let kE1 = new KeyframeEffect(divBefore,
         [{ width: "100%" }], { duration: 500, delay: 300, easing: "ease-out", iterations: 2, direction: "alternate" }

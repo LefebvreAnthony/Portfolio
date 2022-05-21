@@ -140,7 +140,6 @@ export function Header(fill, title) {
   containerFlex.append(figure, titleSection, barBurger);
   fragment.append(containerFlex, Nav())
   header.appendChild(fragment);
-  console.log(Nav());
 
   return fragment;
 }
