@@ -13,7 +13,10 @@ export const Arrows = {
         for (let key in attr) {
             svg.setAttribute(key, attr[key]);
         };
-        svg.innerHTML = `<path d="M17.5 21L35 38.5L52.5 21L59.5 24.5L35 49L10.5 24.5L17.5 21Z" fill="${fillColor}"/>`;
+        svg.innerHTML = `<path d="M17.5 21L35 38.5L52.5 21L59.5 24.5L35 49L10.5 24.5L17.5 21Z" fill="${fillColor}"/>
+        <text x="25" y="10" font-size="10" style="fill:#181818">
+            Next
+        </text>`;
 
 
         return svg;
@@ -31,7 +34,10 @@ export const Arrows = {
             svg.setAttribute(key, attr[key]);
         };
         svg.innerHTML = `
-        <path d="M52.5 49L35 31.5L17.5 49L10.5 45.5L35 21L59.5 45.5L52.5 49Z" fill="${fillColor}"/>`;
+        <path d="M52.5 49L35 31.5L17.5 49L10.5 45.5L35 21L59.5 45.5L52.5 49Z" fill="${fillColor}"/>
+        <text x="17" y="65" font-size="10" style="fill:#181818">
+           Previous
+        </text>`;
 
 
         return svg;

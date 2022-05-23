@@ -5,7 +5,7 @@ import { AboutView } from "../views/About.view.js";
 import { ProjectView } from "../views/project.view.js";
 
 export function navController() {
-    let btns = document.querySelectorAll('li');
+    let btns = document.querySelectorAll('header li');
     let texts = document.querySelectorAll(".text-transition");
 
     for (let i = 1; i < btns.length; i++) {

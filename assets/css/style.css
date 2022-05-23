@@ -10,6 +10,14 @@ body {
   overflow: hidden;
 }
 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Cormorant;
+}
+
 @font-face {
   font-family: Hillshort;
   src: url("../font/Hillshort.otf");
@@ -221,11 +229,30 @@ main .main_project .project_description button:hover {
   background-color: #181818;
   color: #EBEAEC;
 }
+main .main_project .project_description .btn_git {
+  bottom: 45%;
+  right: 16%;
+  padding: 1.2rem 2rem;
+  transition: all 1.5s;
+}
+main .main_project .project_description .btn_git:hover path {
+  fill: #EBEAEC;
+}
+main .main_project .project_description .list_technos {
+  padding-top: 3%;
+}
+main .main_project .project_description .list_technos h3 {
+  text-transform: capitalize;
+  align-self: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 main .main_project .project_description--before {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
-  height: 65%;
+  height: 70%;
   border-right: 1px solid #181818;
   width: 0;
   background: #EBEAEC;
