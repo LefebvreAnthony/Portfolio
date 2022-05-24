@@ -29,12 +29,12 @@ export function projectController(project) {
     function scroll(event) {
 
         if (event.deltaY > 0 && index < Projects.size) {
-            index++
+            index++;
             trans();
             setTimeout(() => project.next(), 500);
         }
         if (event.deltaY < 0 && index > 1) {
-            index--
+            index--;
             trans();
             setTimeout(() => project.previous(), 500);
 

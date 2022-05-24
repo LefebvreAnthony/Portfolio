@@ -8,4 +8,5 @@ export const Technos = {
     html: "./assets/img/technos/html.svg",
     css: "./assets/img/technos/css.svg",
     sql: "./assets/img/technos/sql.svg",
+    htmlCss: "./assets/img/technos/html&css.svg"
 }

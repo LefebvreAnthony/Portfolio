@@ -15,7 +15,7 @@ export const Projects = new Map([
                 js: Technos.js,
                 node: Technos.node,
                 sass: Technos.sass,
-
+                html: Technos.html
             }
         }
     ],
@@ -30,6 +30,7 @@ export const Projects = new Map([
             technos: {
                 js: Technos.js,
                 php: Technos.php,
+                htmlCss: Technos.htmlCss
             }
         }
     ],
@@ -43,8 +44,8 @@ export const Projects = new Map([
             linkGit: "https://github.com/LefebvreAnthony/P3-OC",
             technos: {
                 html: Technos.html,
-
+                sass: Technos.sass
             }
         }
     ]
-])
+]);

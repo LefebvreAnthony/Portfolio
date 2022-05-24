@@ -1,11 +1,10 @@
 "use-strict";
 
-export function AboutController() {
-    let subNav = document.querySelectorAll('.about ul > li');
-    let canvas = document.getElementById("canvas");
-    let aboutMe = document.getElementById("container_about_me");
-    subNav[2].addEventListener("click", (e) => {
-        canvas.remove()
-        aboutMe.remove()
-    })
+import { AboutsContents } from "../content/Abouts.contents.js";
+
+export function AboutController(about) {
+    let nav = document.querySelectorAll('#subNav li');
+    nav[0].addEventListener("click", () => about.update(AboutsContents.aboutMe()));
+    nav[1].addEventListener("click", () => about.update(AboutsContents.skills()));
+    nav[2].addEventListener("click", () => about.update(AboutsContents.contactMe()));
 }

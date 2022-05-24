@@ -246,6 +246,13 @@ main .main_project .project_description .list_technos h3 {
   align-self: center;
   font-size: 1.5rem;
   font-weight: bold;
+  padding-bottom: 1rem;
+}
+main .main_project .project_description .list_technos ul {
+  display: flex;
+  flex-flow: column wrap;
+  height: 30vh;
+  width: 15vw;
 }
 main .main_project .project_description--before {
   position: absolute;
@@ -275,16 +282,28 @@ main .hide {
   display: none;
 }
 
-main .about {
+#about {
   display: grid;
-  grid-template: 20vh 50vh/70vw 20vw;
+  grid-template: 70vh/70vw 20vw;
   padding: 2% 5%;
 }
-main .about #subNav {
-  position: relative;
-  grid-area: 1/2/3/3;
+#about #subNav {
+  height: 100%;
 }
-main .about #subNav #border-nav {
+#about #subNav ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#about #subNav ul li {
+  position: relative;
+  font: 3rem Disco;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#about .about #border-nav {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -292,26 +311,13 @@ main .about #subNav #border-nav {
   height: 100%;
   width: 100%;
 }
-main .about #subNav ul {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-main .about #subNav ul li {
-  position: relative;
-  font: 3rem Disco;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-main .about #container_about_me {
+#about #container_about_me {
   width: 60%;
 }
-main .about #container_about_me p:first-child {
+#about #container_about_me p:first-child {
   font-size: 2.5rem;
 }
-main .about #container_about_me .soft {
+#about #container_about_me .soft {
   opacity: 0.6;
   font-size: 1.5rem;
 }

@@ -10,9 +10,9 @@ export function homeController() {
         button.addEventListener("click", () => {
             for (let i in AnimationHome()) {
                 AnimationHome()[i].play();
-            }
-        })
-    })
+            };
+        });
+    });
     btn[0].addEventListener("click", ProjectView);
     btn[1].addEventListener("click", AboutView);
 };

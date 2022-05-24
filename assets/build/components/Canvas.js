@@ -1,7 +1,6 @@
 "use-strict";
 
-export function Canvas() {
-    let canvas = document.getElementById('canvas');
+export function Canvas(canvas) {
     canvas.width = window.innerWidth * 70 / 100;
     canvas.height = window.innerHeight * 50 / 100;
     let ctx = canvas.getContext("2d");

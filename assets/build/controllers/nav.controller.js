@@ -17,21 +17,21 @@ export function navController() {
             })
             for (let i in TransitionPage()) {
                 TransitionPage()[i].play();
-            }
-        })
-    }
+            };
+        });
+    };
 
     //& btn project nav
     btns[1].addEventListener("click", () => {
         setTimeout(() => {
             ProjectView();
-        }, 1000)
+        }, 1000);
     });
 
     //& btn about nav
     btns[2].addEventListener("click", () => {
         setTimeout(() => {
             AboutView();
-        }, 1000)
+        }, 1000);
     })
 }

@@ -1,7 +1,6 @@
 "use-strict";
 
-import { About } from "../components/About.js";
-import { Canvas } from "../components/Canvas.js";
+import { AboutContents } from "../components/About.js";
 import { Header } from "../components/Header.js";
 import { AboutController } from "../controllers/About.controller.js";
 import { headerController } from "../controllers/header.controller.js";
@@ -12,7 +11,8 @@ export function AboutView() {
     body.style.color = "#EBEAEC";
     Header(true, "About");
     headerController();
-    About();
-    Canvas();
-    AboutController();
+    let about = new AboutContents();
+    about.create();
+    AboutController(about);
+
 };

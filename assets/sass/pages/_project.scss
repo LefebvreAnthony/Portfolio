@@ -70,9 +70,15 @@ main {
                     align-self: center;
                     font-size: 1.5rem;
                     font-weight: bold;
-
+                    padding-bottom: 1rem;
                 }
 
+                ul {
+                    display: flex;
+                    flex-flow: column wrap;
+                    height: 30vh;
+                    width: 15vw;
+                }
             }
 
             &--before {

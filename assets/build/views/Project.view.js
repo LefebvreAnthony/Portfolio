@@ -11,7 +11,7 @@ export function ProjectView() {
     body.style.color = "#181818";
     Header(false, "Project");
     let project = new ProjectContent("quizz");
-    project.create()
+    project.create();
     headerController();
     projectController(project);
 };
