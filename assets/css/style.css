@@ -303,6 +303,10 @@ main .hide {
   text-transform: uppercase;
   cursor: pointer;
 }
+#about .about {
+  display: grid;
+  grid-template: 20vh 50vh/70vw;
+}
 #about .about #border-nav {
   position: absolute;
   z-index: -1;
@@ -320,6 +324,56 @@ main .hide {
 #about #container_about_me .soft {
   opacity: 0.6;
   font-size: 1.5rem;
+}
+#about #container_cv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+#about #container_cv--education h2, #about #container_cv--work h2 {
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+#about #container_cv--education li, #about #container_cv--work li {
+  padding-bottom: 1.2rem;
+  list-style: circle;
+}
+#about #container_cv--education li h4, #about #container_cv--work li h4 {
+  font-size: 1.5rem;
+}
+#about #container_cv--education li p, #about #container_cv--work li p {
+  opacity: 0.7;
+}
+#about #container_cv--work {
+  position: relative;
+}
+#about #container_cv--work h2 {
+  position: relative;
+}
+#about #container_cv--work h2::before {
+  content: url("../../img/svg/work.svg");
+  position: absolute;
+  left: -20%;
+  top: 0;
+}
+#about #container_cv--work ul ul {
+  padding-left: 3rem;
+  opacity: 0.7;
+}
+#about #container_cv--work ul ul li {
+  list-style: katakana;
+  margin-left: 1rem;
+}
+#about #container_cv--work::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: -30%;
+  height: 50%;
+  width: 0.5rem;
+  border-radius: 2.3rem;
+  background-color: #EBEAEC;
+  opacity: 0.9;
 }
 
 /*# sourceMappingURL=style.css.map */

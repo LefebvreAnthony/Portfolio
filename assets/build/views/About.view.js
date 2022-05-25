@@ -14,5 +14,4 @@ export function AboutView() {
     let about = new AboutContents();
     about.create();
     AboutController(about);
-
 };

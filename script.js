@@ -1,5 +1,5 @@
-import { SvgNavAbout } from "./assets/build/components/SvgNavAbout.js";
+import { SvgLogoFilter } from "./assets/build/components/SvgLogoFilter.js";
 import { homeController } from "./assets/build/controllers/home.controller.js";
 
 homeController();
-document.body.appendChild(SvgNavAbout());
+document.body.appendChild(SvgLogoFilter());

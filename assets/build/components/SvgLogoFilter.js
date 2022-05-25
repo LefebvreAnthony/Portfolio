@@ -1,6 +1,6 @@
 "use-strict";
 
-export function SvgNavAbout() {
+export function SvgLogoFilter() {
     let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     let doorsLeft = document.querySelector(".doors_left")
     let sw = 20 * (window.innerWidth / 100);

@@ -23,6 +23,10 @@
     }
 
     .about {
+
+        display: grid;
+        grid-template: 20vh 50vh / 70vw;
+
         #border-nav {
             position: absolute;
             z-index: -1;
@@ -45,6 +49,70 @@
         .soft {
             opacity: .6;
             font-size: 1.5rem;
+        }
+    }
+
+    #container_cv {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+
+        &--education,
+        &--work {
+            h2 {
+                font-size: 3rem;
+                padding-bottom: 2rem;
+            }
+
+            li {
+                padding-bottom: 1.2rem;
+                list-style: circle;
+
+                h4 {
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    opacity: .7;
+                }
+            }
+        }
+
+        &--work {
+            position: relative;
+
+            h2 {
+                position: relative;
+
+                &::before {
+                    content: url("../../img/svg/work.svg");
+                    position: absolute;
+                    left: -20%;
+                    top: 0;
+                }
+            }
+
+            ul ul {
+                padding-left: 3rem;
+                opacity: .7;
+
+                li {
+                    list-style: katakana;
+                    margin-left: 1rem;
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 20%;
+                left: -30%;
+                height: 50%;
+                width: .5rem;
+                border-radius: 2.3rem;
+                background-color: $light-color;
+                opacity: .9;
+            }
         }
     }
 }
