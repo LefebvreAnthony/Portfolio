@@ -53,6 +53,7 @@
     }
 
     #container_cv {
+        position: relative;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
@@ -85,7 +86,7 @@
                 position: relative;
 
                 &::before {
-                    content: url("../../img/svg/work.svg");
+                    // content: url("../../img/svg/work.svg");
                     position: absolute;
                     left: -20%;
                     top: 0;
@@ -94,11 +95,16 @@
 
             ul ul {
                 padding-left: 3rem;
-                opacity: .7;
 
                 li {
+                    opacity: .7;
                     list-style: katakana;
                     margin-left: 1rem;
+                    transition: all .3s;
+
+                    &:hover {
+                        opacity: 1;
+                    }
                 }
             }
 
@@ -113,6 +119,34 @@
                 background-color: $light-color;
                 opacity: .9;
             }
+        }
+    }
+
+    #download {
+        position: absolute;
+        bottom: 0;
+        left: 45.5%;
+        cursor: pointer;
+
+        path {
+            stroke-dasharray: 30;
+            transition: opacity 1s;
+        }
+
+        &-popup {
+            padding: .1rem .5rem;
+            position: absolute;
+            bottom: 11%;
+            left: 43.5%;
+            border-bottom: 1px solid $light-color;
+            font-family: $font-text;
+            font-weight: 900;
+            transition: opacity .3s;
+            opacity: 0;
+        }
+
+        &:hover+#download-popup {
+            opacity: 1;
         }
     }
 }

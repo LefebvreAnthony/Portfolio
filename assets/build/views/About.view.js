@@ -1,5 +1,6 @@
 "use-strict";
 
+import { downloadAnimation } from "../animations/about.animation.js";
 import { AboutContents } from "../components/About.js";
 import { Header } from "../components/Header.js";
 import { AboutController } from "../controllers/About.controller.js";
@@ -13,5 +14,6 @@ export function AboutView() {
     headerController();
     let about = new AboutContents();
     about.create();
+    downloadAnimation().forEach(element => { element.play() });
     AboutController(about);
 };

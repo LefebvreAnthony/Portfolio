@@ -326,6 +326,7 @@ main .hide {
   font-size: 1.5rem;
 }
 #about #container_cv {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
@@ -351,18 +352,21 @@ main .hide {
   position: relative;
 }
 #about #container_cv--work h2::before {
-  content: url("../../img/svg/work.svg");
   position: absolute;
   left: -20%;
   top: 0;
 }
 #about #container_cv--work ul ul {
   padding-left: 3rem;
-  opacity: 0.7;
 }
 #about #container_cv--work ul ul li {
+  opacity: 0.7;
   list-style: katakana;
   margin-left: 1rem;
+  transition: all 0.3s;
+}
+#about #container_cv--work ul ul li:hover {
+  opacity: 1;
 }
 #about #container_cv--work::before {
   content: "";
@@ -374,6 +378,30 @@ main .hide {
   border-radius: 2.3rem;
   background-color: #EBEAEC;
   opacity: 0.9;
+}
+#about #download {
+  position: absolute;
+  bottom: 0;
+  left: 45.5%;
+  cursor: pointer;
+}
+#about #download path {
+  stroke-dasharray: 30;
+  transition: opacity 1s;
+}
+#about #download-popup {
+  padding: 0.1rem 0.5rem;
+  position: absolute;
+  bottom: 11%;
+  left: 43.5%;
+  border-bottom: 1px solid #EBEAEC;
+  font-family: Cormorant;
+  font-weight: 900;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+#about #download:hover + #download-popup {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */
