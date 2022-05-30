@@ -10,6 +10,7 @@ export class AboutContents {
         this.subContainer = Container.subContainer();
         this.nav = document.createElement("nav");
         this.ul = document.createElement("ul");
+        this.blockTransition = document.createElement("div");
         this.arrNav = ["Profile", "Skills", "Contact"];
     }
 
@@ -17,6 +18,7 @@ export class AboutContents {
         let main = document.querySelector("main");
         this.container.className = "about";
 
+        this.blockTransition.setAttribute("id", "about-transition");
         this.nav.setAttribute("id", "subNav");
         main.setAttribute("id", "about");
 
@@ -26,13 +28,15 @@ export class AboutContents {
             this.ul.appendChild(element);
         });
         this.nav.appendChild(this.ul);
-        this.subContainer.appendChild(this.nav);
+        this.subContainer.append(this.nav, this.blockTransition);
         this.container.appendChild(AboutsContents.aboutMe());
         main.appendChild(this.subContainer);
     }
 
     update(fragment) {
-        RemoveChild(this.container);
-        this.container.appendChild(fragment);
+        setTimeout(() => {
+            RemoveChild(this.container);
+            this.container.appendChild(fragment);
+        }, 1500)
     }
 }

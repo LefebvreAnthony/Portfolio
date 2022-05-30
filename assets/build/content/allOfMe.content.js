@@ -2,9 +2,9 @@
 
 export const AllOfMe = {
     education: {
-        OnlineFormaPro: "2021-2022",
-        OpenClassRoom: "2020-2021",
-        Groisy: "2011-2013"
+        OnlineFormaPro: "2021-2022 : Bac + 2 developper web",
+        OpenClassRoom: "2020-2021 : Developper web",
+        CFAGroisy: "2011-2013 : CAP cook"
     },
     work: {
         OnlineFormaPro: "2021-2022",

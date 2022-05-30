@@ -102,6 +102,37 @@ export const AboutsContents = {
     contactMe() {
 
         let fragment = new DocumentFragment();
+        let containertitle = document.createElement("div");
+        containertitle.setAttribute("id", "container_contact--title")
+        let titleContact = document.createElement("h2");
+        titleContact.textContent = "Contact me here...";
+
+        let containerForm = document.createElement("div");
+        let form = document.createElement("form");
+        let btnSubmit = document.createElement("button");
+        btnSubmit.setAttribute("id", "submit");
+        btnSubmit.textContent = "Send";
+        btnSubmit.addEventListener("click", (e) => {
+            e.preventDefault();
+        })
+        containerForm.setAttribute("id", "container_form");
+        form.innerHTML = `
+        <fieldset>
+            <label hidden for="firstName">Name</label>
+            <input type="text" id="firstName" name="firstName" placeHolder="Name">
+            <label hidden for="email">Email</label>
+            <input type="email" id="email" name="email" placeHolder="Email">
+            <label hidden for="object">Object</label>
+            <input type="text" id="object" name="object" placeHolder="Object">
+        </fieldset>
+            <label hidden for="message">Message</label>
+            <textarea id="message" name="message" rows="7" cols="35" placeHolder="type ure text"></textarea>
+        `;
+        form.appendChild(btnSubmit)
+        containertitle.appendChild(titleContact);
+        containerForm.appendChild(form);
+
+        fragment.append(containertitle, containerForm);
 
         return fragment;
 

@@ -375,13 +375,13 @@ main .hide {
   left: -30%;
   height: 50%;
   width: 0.5rem;
-  border-radius: 2.3rem;
-  background-color: #EBEAEC;
+  filter: blur(2px) url(#turbTest);
+  border-left: 0.3rem solid #EBEAEC;
   opacity: 0.9;
 }
 #about #download {
   position: absolute;
-  bottom: 0;
+  bottom: 2%;
   left: 45.5%;
   cursor: pointer;
 }
@@ -392,7 +392,7 @@ main .hide {
 #about #download-popup {
   padding: 0.1rem 0.5rem;
   position: absolute;
-  bottom: 11%;
+  bottom: 13%;
   left: 43.5%;
   border-bottom: 1px solid #EBEAEC;
   font-family: Cormorant;
@@ -402,6 +402,81 @@ main .hide {
 }
 #about #download:hover + #download-popup {
   opacity: 1;
+}
+#about #sub_container {
+  position: relative;
+}
+#about #container_contact--title {
+  align-self: center;
+}
+#about #container_contact--title h2 {
+  font-size: 4.2rem;
+  text-transform: capitalize;
+}
+#about form {
+  text-align: center;
+}
+#about form fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#about form fieldset input {
+  position: relative;
+  min-width: 25vw;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font: 1.4rem Cormorant;
+  font-weight: 900;
+  outline: none;
+  background: local;
+  border: none;
+  border-bottom: 2px solid #EBEAEC;
+  color: #EBEAEC;
+}
+#about form textarea {
+  margin: 0 10vw;
+  width: 50vw;
+  outline: none;
+  font: 1.4rem Cormorant;
+  font-weight: 900;
+  border: none;
+  border-left: 2px solid #EBEAEC;
+  color: #EBEAEC;
+  background: local;
+  padding: 0.5rem;
+  padding-left: 2rem;
+  resize: none;
+}
+#about form #submit {
+  padding: 0.5rem 4rem;
+  font: 2.5rem Disco;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  background-color: #EBEAEC;
+  color: #181818;
+  border: none;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#about form #submit:hover {
+  background: #181818;
+  color: #EBEAEC;
+  outline: 1px solid #EBEAEC;
+}
+#about-transition {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 6vw;
+  background-color: #181818;
+  border-left: 1rem solid #EBEAEC;
+  filter: blur(5px) url(#turbTest);
 }
 
 /*# sourceMappingURL=style.css.map */
