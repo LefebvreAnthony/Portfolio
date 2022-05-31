@@ -164,6 +164,39 @@
     }
 
     //* Form CSS
+
+    #modal_error {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100vw;
+        height: 100vh;
+        color: $darkness-color;
+        background-color: #181818ab;
+        backdrop-filter: blur(6px);
+        text-align: center;
+        display: flex;
+
+        p {
+            position: relative;
+            margin: auto;
+            font: 5rem $font-title;
+            color: $invalid-color;
+            border: 2px solid;
+            border-radius: 1rem;
+            padding: 4rem 8rem;
+
+            span {
+                position: absolute;
+                right: 5%;
+                top: 5%;
+                font-size: 6rem;
+                cursor: pointer;
+            }
+        }
+    }
+
     form {
         text-align: center;
 
@@ -173,8 +206,19 @@
             flex-direction: column;
             align-items: center;
 
-            input {
+            label {
                 position: relative;
+                color: $invalid-color;
+
+                &::after {
+                    content: "*";
+                    position: absolute;
+                    right: -10vw;
+                    bottom: -2vh;
+                }
+            }
+
+            input {
                 min-width: 25vw;
                 padding: .5rem;
                 margin-bottom: 1rem;
@@ -185,6 +229,7 @@
                 border: none;
                 border-bottom: 2px solid $light-color;
                 color: $light-color;
+                caret-color: rgba(255, 255, 255, 0.184);
             }
         }
 
@@ -225,6 +270,7 @@
                 outline: 1px solid $light-color;
             }
         }
+
     }
 
     //! about transition nav

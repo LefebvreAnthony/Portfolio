@@ -1,5 +1,6 @@
 "use-strict";
 
+import { HTMLElement } from "../utils/HtmlElement.js";
 import { AboutsContents } from "../content/Abouts.contents.js";
 import { RemoveChild } from "../utils/removeElements.js";
 import { Container } from "./Container.js";
@@ -8,9 +9,9 @@ export class AboutContents {
     constructor() {
         this.container = Container.base();
         this.subContainer = Container.subContainer();
-        this.nav = document.createElement("nav");
-        this.ul = document.createElement("ul");
-        this.blockTransition = document.createElement("div");
+        this.nav = new HTMLElement("nav", "subNav").element;
+        this.ul = new HTMLElement("ul").element;
+        this.blockTransition = new HTMLElement("div", "about-transition").element;
         this.arrNav = ["Profile", "Skills", "Contact"];
     }
 
@@ -18,13 +19,10 @@ export class AboutContents {
         let main = document.querySelector("main");
         this.container.className = "about";
 
-        this.blockTransition.setAttribute("id", "about-transition");
-        this.nav.setAttribute("id", "subNav");
         main.setAttribute("id", "about");
 
         this.arrNav.forEach(li => {
-            let element = document.createElement("li");
-            element.textContent = li;
+            let element = new HTMLElement("li").text(li);
             this.ul.appendChild(element);
         });
         this.nav.appendChild(this.ul);

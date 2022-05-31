@@ -7,10 +7,10 @@ function verifForm(input, reg) {
 };
 
 //! add invalid fonction box
-export function noValidateForm(firstName, email, object) {
-    let spanName = document.querySelector('.err_name');
-    let spanEmail = document.querySelector('.err_mail');
-    let spanObject = document.querySelector('.err_object');
+function noValidateForm(firstName, email, object) {
+    let spanName = document.querySelector('label[for=firstName]');
+    let spanEmail = document.querySelector('label[for=email]');
+    let spanObject = document.querySelector('label[for=object]');
 
     !verifForm(firstName, "^[A-Za-z\\s]{3,25}$") ? spanName.innerHTML = "Name invalid" : spanName.innerHTML = "";
     !verifForm(email, "^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$") ? spanEmail.innerHTML = "Email invalid" : spanEmail.innerHTML = "";
@@ -37,18 +37,17 @@ function speChar(input, span) {
     }
 }
 
-export function validateForm() {
-    let form = document.querySelector('form');
+export function validateForm(form, modal, container) {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        noValidateForm(this.firstName, this.email, this.object);
+        noValidateForm(form.firstName, form.email, form.object);
 
         let myForm = {
-            name: this.firstName.value,
-            email: this.email.value,
-            object: this.object.value,
-            message: this.message.value
+            name: form.firstName.value,
+            email: form.email.value,
+            object: form.object.value,
+            message: form.message.value
         };
         let init = {
             headers: {
@@ -57,9 +56,9 @@ export function validateForm() {
             method: 'POST',
             body: JSON.stringify(myForm)
         };
-        if (verifForm(this.firstName, "^[A-Za-z\\s]{3,25}$") &&
-            verifForm(this.email, "^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$") &&
-            verifForm(this.object, "^[A-Za-z\\s]{3,20}$")
+        if (verifForm(form.firstName, "^[A-Za-z\\s]{3,25}$") &&
+            verifForm(form.email, "^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$") &&
+            verifForm(form.object, "^[A-Za-z\\s]{3,20}$")
         ) {
             // fetch("./php/postForm.php", init)
             //     .then(res => {
@@ -77,7 +76,12 @@ export function validateForm() {
 
             //     })
         } else {
-            alert('Formulaire Invalid !')
+            let inputs = document.querySelectorAll("form fieldset input");
+            // alert('Formulaire Invalid !')
+            inputs.forEach(el => el.style.display = "block");
+            container.appendChild(modal);
+            modal.addEventListener("click", () => modal.remove());
+
         }
 
     })

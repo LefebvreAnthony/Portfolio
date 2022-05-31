@@ -1,8 +1,9 @@
 "use-strict";
 
-import { HTMLElement, SVGElement } from "../../base/HtmlElement.js";
+import { HTMLElement, SVGElement } from "../utils/HtmlElement.js";
 import { Canvas } from "../components/Canvas.js";
 import { AllOfMe } from "./allOfMe.content.js";
+import { validateForm } from "../controllers/form.controller.js";
 
 export const AboutsContents = {
     aboutMe() {
@@ -83,13 +84,9 @@ export const AboutsContents = {
         let fragment = new DocumentFragment();
         let containertitle = new HTMLElement("div", "container_contact--title").element;
         let titleContact = new HTMLElement("h2").text("Contact me here...");
-
         let containerForm = new HTMLElement("div", "container_form").element;
         let form = new HTMLElement("form").element;
         let btnSubmit = new HTMLElement("button", "submit").text("Send");
-        btnSubmit.addEventListener("click", (e) => {
-            e.preventDefault();
-        })
         form.innerHTML = `
         <fieldset>
             <label hidden for="firstName">Name</label>
@@ -102,13 +99,20 @@ export const AboutsContents = {
             <label hidden for="message">Message</label>
             <textarea id="message" name="message" rows="7" cols="35" placeHolder="type ure text"></textarea>
         `;
+        //! modal error form
+        let modal = new HTMLElement("div", "modal_error").element;
+        let pModal = new HTMLElement("p").text("Form invalid, please verify ure data");
+        let cancelModal = new HTMLElement("span", "cancel_modal").text("x");
+
+        pModal.appendChild(cancelModal)
+        modal.appendChild(pModal);
+        validateForm(form, modal, containerForm);
         form.appendChild(btnSubmit)
         containertitle.appendChild(titleContact);
         containerForm.appendChild(form);
 
         fragment.append(containertitle, containerForm);
-
         return fragment;
 
     }
-}
+};
