@@ -426,11 +426,16 @@ main .hide {
   text-align: center;
   display: flex;
 }
+#about #modal_error .invalid {
+  color: #E33026;
+}
+#about #modal_error .valid {
+  color: #3FB42D;
+}
 #about #modal_error p {
   position: relative;
   margin: auto;
   font: 5rem Disco;
-  color: #E33026;
   border: 2px solid;
   border-radius: 1rem;
   padding: 4rem 8rem;
@@ -454,11 +459,13 @@ main .hide {
 #about form fieldset label {
   position: relative;
   color: #E33026;
+  visibility: hidden;
+  min-width: 15vw;
 }
 #about form fieldset label::after {
   content: "*";
   position: absolute;
-  right: -10vw;
+  right: -5vw;
   bottom: -2vh;
 }
 #about form fieldset input {

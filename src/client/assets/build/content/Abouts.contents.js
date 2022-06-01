@@ -89,29 +89,27 @@ export const AboutsContents = {
         let btnSubmit = new HTMLElement("button", "submit").text("Send");
         form.innerHTML = `
         <fieldset>
-            <label hidden for="firstName">Name</label>
+            <label for="firstName">Name</label>
             <input type="text" id="firstName" name="firstName" placeHolder="Name">
-            <label hidden for="email">Email</label>
+            <label for="email">Email</label>
             <input type="email" id="email" name="email" placeHolder="Email">
-            <label hidden for="object">Object</label>
+            <label for="object">Object</label>
             <input type="text" id="object" name="object" placeHolder="Object">
         </fieldset>
             <label hidden for="message">Message</label>
-            <textarea id="message" name="message" rows="7" cols="35" placeHolder="type ure text"></textarea>
+            <textarea id="message" name="message" rows="5" cols="35" placeHolder="type ure text"></textarea>
         `;
         //! modal error form
         let modal = new HTMLElement("div", "modal_error").element;
-        let pModal = new HTMLElement("p").text("Form invalid, please verify ure data");
-        let cancelModal = new HTMLElement("span", "cancel_modal").text("x");
-
-        pModal.appendChild(cancelModal)
-        modal.appendChild(pModal);
-        validateForm(form, modal, containerForm);
+        let pModal = new HTMLElement("p").element;
         form.appendChild(btnSubmit)
         containertitle.appendChild(titleContact);
         containerForm.appendChild(form);
 
         fragment.append(containertitle, containerForm);
+
+        validateForm(form, modal, pModal, containerForm);
+
         return fragment;
 
     }

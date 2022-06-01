@@ -178,11 +178,18 @@
         text-align: center;
         display: flex;
 
+        .invalid {
+            color: $invalid-color;
+        }
+
+        .valid {
+            color: $valid-color;
+        }
+
         p {
             position: relative;
             margin: auto;
             font: 5rem $font-title;
-            color: $invalid-color;
             border: 2px solid;
             border-radius: 1rem;
             padding: 4rem 8rem;
@@ -209,11 +216,13 @@
             label {
                 position: relative;
                 color: $invalid-color;
+                visibility: hidden;
+                min-width: 15vw;
 
                 &::after {
                     content: "*";
                     position: absolute;
-                    right: -10vw;
+                    right: -5vw;
                     bottom: -2vh;
                 }
             }

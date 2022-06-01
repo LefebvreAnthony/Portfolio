@@ -1,5 +1,7 @@
 "use-strict";
 
+import { HTMLElement } from "../utils/HtmlElement.js";
+
 //? Add RegExp function
 function verifForm(input, reg) {
     let regEx = new RegExp(reg, 'g');
@@ -37,10 +39,11 @@ function speChar(input, span) {
     }
 }
 
-export function validateForm(form, modal, container) {
+export function validateForm(form, modal, pModal, container) {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-
+        let labels = document.querySelectorAll("form fieldset label");
+        let inputs = document.querySelectorAll("form fieldset input");
         noValidateForm(form.firstName, form.email, form.object);
 
         let myForm = {
@@ -60,28 +63,45 @@ export function validateForm(form, modal, container) {
             verifForm(form.email, "^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$") &&
             verifForm(form.object, "^[A-Za-z\\s]{3,20}$")
         ) {
-            // fetch("./php/postForm.php", init)
-            //     .then(res => {
-            //         if (res.ok) {
-            //             let alert = document.getElementById("alert");
-            //             alert.style.height = "initial";
-            //             setTimeout(() => {
-            //                 alert.style.height = "0";
-            //             }, 3500)
-            //         }
-            //         return res.json()
-            //     })
-            //     .then(res => {
-            //         console.log(res);
+            fetch("../server/send.form.php", init)
+                .then(res => {
+                    if (res.ok) {
+                        pModal.textContent = "Form send, thanks for ure mail !";
+                        pModal.className = "valid";
+                        let cancelModal = new HTMLElement("span", "cancel_modal").text("x");
 
-            //     })
+                        labels.forEach(el => el.style.visibility = "hidden");
+                        inputs.forEach(el => el.value = "");
+
+                        pModal.appendChild(cancelModal);
+                        modal.appendChild(pModal);
+                        container.appendChild(modal);
+                        modal.addEventListener("click", () => modal.remove());
+                    } else {
+
+                        pModal.textContent = "Error, send mail failed, try again.";
+                        pModal.className = "invalid";
+                        let cancelModal = new HTMLElement("span", "cancel_modal").text("x");
+
+                        labels.forEach(el => el.style.visibility = "visible");
+                        pModal.appendChild(cancelModal);
+                        modal.appendChild(pModal);
+                        container.appendChild(modal);
+
+                        modal.addEventListener("click", () => modal.remove());
+                    }
+                });
         } else {
-            let inputs = document.querySelectorAll("form fieldset input");
-            // alert('Formulaire Invalid !')
-            inputs.forEach(el => el.style.display = "block");
-            container.appendChild(modal);
-            modal.addEventListener("click", () => modal.remove());
+            pModal.textContent = "Form invalid, please verify ure data";
+            pModal.className = "invalid";
+            let cancelModal = new HTMLElement("span", "cancel_modal").text("x");
 
+            labels.forEach(el => el.style.visibility = "visible");
+            pModal.appendChild(cancelModal);
+            modal.appendChild(pModal);
+            container.appendChild(modal);
+
+            modal.addEventListener("click", () => modal.remove());
         }
 
     })
