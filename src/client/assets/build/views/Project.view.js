@@ -9,7 +9,7 @@ export function ProjectView() {
     const body = document.querySelector('body');
     body.style.backgroundColor = "#EBEAEC";
     body.style.color = "#181818";
-    Header(false, "Project");
+    Header(false, "Project", "Project");
     let project = new ProjectContent("quizz");
     project.create();
     headerController();

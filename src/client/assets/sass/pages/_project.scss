@@ -86,10 +86,11 @@ main {
                 z-index: 1;
                 top: 0;
                 left: 0;
-                height: 70%;
-                border-right: 1px solid $darkness-color;
+                height: 75%;
+                border-right: 5px solid $darkness-color;
                 width: 0;
                 background: $light-color;
+                filter: url(#turbTest) blur(1px);
             }
         }
 

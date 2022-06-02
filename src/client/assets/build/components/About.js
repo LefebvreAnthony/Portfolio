@@ -31,10 +31,17 @@ export class AboutContents {
         main.appendChild(this.subContainer);
     }
 
-    update(fragment) {
-        setTimeout(() => {
+    update(fragment, contact) {
+        if (!contact) {
+
+            setTimeout(() => {
+                RemoveChild(this.container);
+                this.container.appendChild(fragment);
+            }, 1500)
+        } else {
             RemoveChild(this.container);
             this.container.appendChild(fragment);
-        }, 1500)
+
+        }
     }
 }

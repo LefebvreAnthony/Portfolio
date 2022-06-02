@@ -18,6 +18,33 @@
                 font: 3rem $font-title;
                 text-transform: uppercase;
                 cursor: pointer;
+                opacity: .5;
+                transition: all .3s;
+
+                &:hover {
+                    opacity: 1;
+                    @include subNavHover;
+                }
+            }
+
+            .active {
+                opacity: 1;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: -2vh;
+                    left: -1.3vw;
+                    filter: url(#turbTest) blur(2px);
+                    width: 145%;
+                    height: 162%;
+                    border-bottom: 5px solid;
+                    border-top: 5px solid;
+                    backdrop-filter: opacity(0.5);
+                    border-radius: 1.2rem;
+                    @include subNavActive;
+                    transform-origin: center;
+                }
             }
         }
     }
@@ -152,13 +179,74 @@
         position: relative;
     }
 
+    //PAGE SKILLS
+    #container_skills {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+
+        svg {
+            transform: scale(1.3);
+            transition: all .5s ease-out;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(2);
+
+                & path {
+                    transform: rotateY(1turn);
+                    fill: $light-color  !important;
+                    stroke: $darkness-color  !important;
+                }
+            }
+
+            path {
+                transition: all 1s ease-in-out;
+                transform-origin: center;
+                stroke-dasharray: 1000;
+            }
+        }
+    }
+
     //PAGE CONTACT
     #container_contact--title {
         align-self: center;
+        display: flex;
 
         h2 {
             font-size: 4.2rem;
             text-transform: capitalize;
+            margin-right: 10vw;
+        }
+
+        ul {
+            display: flex;
+            align-self: center;
+
+            li {
+                margin-right: 3vw;
+
+                // border-top: 1px dashed $light-color;
+
+                svg {
+                    transition: transform .3s;
+                    transform-origin: top left;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: rotate(20deg);
+
+                        & path {
+                            fill: $light-color  !important;
+                        }
+                    }
+
+                    path {
+                        stroke-dasharray: 1000;
+                        stroke-dashoffset: 500;
+                    }
+                }
+            }
         }
 
     }

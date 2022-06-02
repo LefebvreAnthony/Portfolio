@@ -48,6 +48,32 @@ header {
         li {
             margin: 5rem;
             cursor: pointer;
+
+            &:hover {
+
+                @include subNavHover;
+            }
+        }
+
+        .active {
+
+            opacity: 1;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: -2vh;
+                left: -1.3vw;
+                filter: url(#turbTest) blur(2px);
+                width: 145%;
+                height: 162%;
+                border-bottom: 5px solid;
+                border-top: 5px solid;
+                backdrop-filter: opacity(0.5);
+                border-radius: 1.2rem;
+                @include subNavActive;
+                transform-origin: center;
+            }
         }
     }
 }

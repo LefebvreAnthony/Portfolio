@@ -1,6 +1,6 @@
 "use-strict";
 
-export function Nav() {
+export function Nav(page) {
     let fragment = new DocumentFragment();
     let nav = document.createElement("nav");
     let ul = document.createElement("ul");
@@ -13,6 +13,6 @@ export function Nav() {
     })
     nav.appendChild(ul);
     fragment.appendChild(nav);
-    
+
     return fragment;
 };

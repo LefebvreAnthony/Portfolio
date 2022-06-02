@@ -1,8 +1,9 @@
 "use-strict";
 
+import { HTMLElement } from "../utils/HtmlElement.js";
 import { Nav } from "./Nav.js";
 
-export function Header(fill, title) {
+export function Header(fill, title, page) {
   let header = document.querySelector("header");
   header.innerHTML = "";
   let fragment = new DocumentFragment();
@@ -124,19 +125,17 @@ export function Header(fill, title) {
     <path fill-rule="evenodd" clip-rule="evenodd" d="M55.7857 17.8024C56.0399 17.9372 56.2651 18.1208 56.4482 18.3427C56.6314 18.5646 56.769 18.8205 56.8531 19.0956C56.9372 19.3708 56.9662 19.6598 56.9385 19.9462C56.9107 20.2326 56.8267 20.5107 56.6913 20.7646L24.7395 80.8572C24.4668 81.3701 24.0015 81.7536 23.446 81.9235C22.8905 82.0933 22.2903 82.0355 21.7774 81.7628C21.2645 81.4901 20.8809 81.0248 20.7111 80.4693C20.5413 79.9138 20.5991 79.3135 20.8718 78.8006L52.8236 18.7081C52.9583 18.4538 53.1419 18.2287 53.3638 18.0455C53.5857 17.8624 53.8416 17.7248 54.1167 17.6407C54.3919 17.5566 54.6809 17.5275 54.9673 17.5553C55.2537 17.5831 55.5318 17.667 55.7857 17.8024V17.8024Z" fill="${color}"/>
     </svg>
     `;
-  let containerFlex = document.createElement("div");
+  let containerFlex = new HTMLElement("div").attributes([["class", "container_flex"]]);
   let figure = document.createElement("figure");
-  let titleSection = document.createElement("h1");
+  let titleSection = new HTMLElement("h1").text(title);
   let barBurger = document.createElement("div");
 
-  containerFlex.className = "container_flex";
   barBurger.setAttribute("id", "bar_burger");
   barBurger.innerHTML = `
     <p>Menu</p>
     ${burger}
   `;
   figure.innerHTML = logo;
-  titleSection.textContent = title;
   containerFlex.append(figure, titleSection, barBurger);
   fragment.append(containerFlex, Nav())
   header.appendChild(fragment);

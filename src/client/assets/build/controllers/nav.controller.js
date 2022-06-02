@@ -2,6 +2,7 @@
 
 import { TransitionPage } from "../animations/transition.page.animation.js";
 import { AboutView } from "../views/About.view.js";
+import { ContactView } from "../views/Contact.view.js";
 import { ProjectView } from "../views/project.view.js";
 
 export function navController() {
@@ -33,5 +34,10 @@ export function navController() {
         setTimeout(() => {
             AboutView();
         }, 1000);
-    })
+    });
+    btns[3].addEventListener("click", () => {
+        setTimeout(() => {
+            ContactView();
+        }, 1000);
+    });
 }

@@ -1,9 +1,10 @@
 "use-strict";
 
 import { HTMLElement, SVGElement } from "../utils/HtmlElement.js";
-import { Canvas } from "../components/Canvas.js";
 import { AllOfMe } from "./allOfMe.content.js";
 import { validateForm } from "../controllers/form.controller.js";
+import { SocialIcon } from "./SocialIcon.content.js";
+import { TechnosSvg } from "./technos.contents.js";
 
 export const AboutsContents = {
     aboutMe() {
@@ -70,11 +71,18 @@ export const AboutsContents = {
     skills() {
 
         let fragment = new DocumentFragment();
-        let canvas = new HTMLElement("canvas", "canvas").element;
-        console.log(canvas);
-        Canvas(canvas);
+        let containertitle = new HTMLElement("div", "container_contact--title").element;
+        let titleContact = new HTMLElement("h2").text("here are some techs i use");
+        let containerSkills = new HTMLElement("div", "container_skills").element;
+        for (let svg in TechnosSvg) {
+            let figure = new HTMLElement("figure").element;
+            figure.innerHTML = TechnosSvg[svg]
+            containerSkills.appendChild(figure);
+        }
+        containerSkills.style.gridTemplateColumns = `repeat(${Object.keys(TechnosSvg).length / 2}, 1fr)`;
+        containertitle.appendChild(titleContact);
 
-        fragment.append(canvas);
+        fragment.append(containertitle, containerSkills);
 
         return fragment;
     },
@@ -84,6 +92,15 @@ export const AboutsContents = {
         let fragment = new DocumentFragment();
         let containertitle = new HTMLElement("div", "container_contact--title").element;
         let titleContact = new HTMLElement("h2").text("Contact me here...");
+        let containerSocial = new HTMLElement("ul").element;
+
+        for (let icon in SocialIcon) {
+            let li = new HTMLElement("li").element;
+            li.innerHTML = SocialIcon[icon];
+            containerSocial.appendChild(li);
+        };
+
+        //* Create Form
         let containerForm = new HTMLElement("div", "container_form").element;
         let form = new HTMLElement("form").element;
         let btnSubmit = new HTMLElement("button", "submit").text("Send");
@@ -97,13 +114,13 @@ export const AboutsContents = {
             <input type="text" id="object" name="object" placeHolder="Object">
         </fieldset>
             <label hidden for="message">Message</label>
-            <textarea id="message" name="message" rows="5" cols="35" placeHolder="type ure text"></textarea>
+            <textarea id="message" name="message" rows="5" cols="35" placeHolder="Type ure text..."></textarea>
         `;
-        //! modal error form
+        //! modal form
         let modal = new HTMLElement("div", "modal_error").element;
         let pModal = new HTMLElement("p").element;
         form.appendChild(btnSubmit)
-        containertitle.appendChild(titleContact);
+        containertitle.append(titleContact, containerSocial);
         containerForm.appendChild(form);
 
         fragment.append(containertitle, containerForm);

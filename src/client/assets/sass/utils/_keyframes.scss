@@ -1,0 +1,29 @@
+@mixin subNavActive {
+    animation: subNavKey .5s ease-out;
+
+    @keyframes subNavKey {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 145%;
+        }
+    }
+}
+
+;
+
+@mixin subNavHover {
+    animation: subNavHov .3s ease-in-out 2 alternate;
+
+    @keyframes subNavHov {
+        from {
+            transform: scaleY(1);
+        }
+
+        to {
+            transform: scaleY(1.5);
+        }
+    }
+}
