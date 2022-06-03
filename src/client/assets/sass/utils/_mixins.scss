@@ -1,13 +1,50 @@
-@mixin buttons($color:$light-color, $radius: .8rem, $border-size: 3px) {
+@mixin buttons($color: $light-color, $radius: .8rem, $border-size: 3px) {
     border-radius: $radius;
     outline: $border-size solid $color;
     border: none;
-    padding: 1rem 5rem;
+    padding: 1rem 0;
     background: transparent;
     color: $color;
     cursor: pointer;
     font-size: 4rem;
+    width: 30vw;
     font-family: Hillshort;
     letter-spacing: 0.5rem;
     transition: all .4s ease;
+    @include mediaTextSize(2rem, 2.3rem, 3rem);
+}
+
+;
+
+// display
+@mixin display($display: block, $align-items: "", $align-content: "", $place-items: "", $justify-content: "", $justify-items: "", $grid-template: "") {
+    display: $display;
+    align-items: $align-items;
+    align-content: $align-content;
+    place-items: $place-items;
+    justify-items: $justify-items;
+    justify-content: $justify-content;
+    grid-template: $grid-template;
+}
+
+//align self
+@mixin alignSelf {
+    display: flex;
+    align-self: center;
+}
+
+//position absolute
+@mixin absolute($top: initial, $right: initial, $left: initial, $bottom: initial, $width: 0, $height: 0, $index: "", $content: null) {
+    @if $content =="" {
+        content: "";
+    }
+
+    position: absolute;
+    #{top}: $top;
+    #{right}: $right;
+    #{bottom}: $bottom;
+    #{left}: $left;
+    #{width}: $width;
+    #{height}: $height;
+    #{z-index}: $index;
 }

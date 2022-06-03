@@ -1,10 +1,9 @@
 main {
 
     .main_project {
+        @include display(grid, $grid-template: 70vh/30vw 70vw);
         position: relative;
-        padding-top: 5rem;
-        display: grid;
-        grid-template: 80vh / 30vw 70vw;
+        padding-top: 4vw;
 
         figure {
             padding-left: 10%;
@@ -35,9 +34,7 @@ main {
             }
 
             button {
-                position: absolute;
-                right: 10%;
-                bottom: 30%;
+                @include absolute($right: 10%, $bottom: 30%, $width: auto, $height: auto);
                 padding: 1.2rem 6rem;
                 font: 2rem bold $font-text;
                 border-radius: 1rem;
@@ -81,31 +78,23 @@ main {
                 }
             }
 
+            // DIV TRANSITION
             &--before {
-                position: absolute;
-                z-index: 1;
-                top: 0;
-                left: 0;
-                height: 75%;
+                @include absolute($top: 0, $left: 0, $height: 75%, $index: 1);
                 border-right: 5px solid $darkness-color;
-                width: 0;
                 background: $light-color;
                 filter: url(#turbTest) blur(1px);
             }
         }
 
         #arrow-down {
-            position: absolute;
-            left: 50%;
-            bottom: 30vh;
+            @include absolute($left: 50%, $bottom: 30vh, $width: auto, $height: auto);
             cursor: pointer;
             opacity: .5;
         }
 
         #arrow-up {
-            position: absolute;
-            left: 50%;
-            top: 0;
+            @include absolute($left: 50%, $top: 0, $width: auto);
             cursor: pointer;
             opacity: .5;
         }

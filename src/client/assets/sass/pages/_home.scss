@@ -1,16 +1,18 @@
+#doors_container {
+    @include absolute($top: 0, $width: 100vw, $height: 100vh);
+    overflow: hidden;
+}
+
 .doors {
-    position: absolute;
-    z-index: 10;
-    height: 100vh;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include absolute($width: 50%, $height: 100vh, $index: 10);
+    @include display(flex, $align-items: center, $justify-content: center);
+    overflow: hidden;
 
     &_right {
+        @include doorsResponsive("top");
         top: 0;
         right: 0;
-        background: no-repeat center/100% url("../img/background/bgRight.png");
+        background: no-repeat center/cover url("../img/background/bgRight.png");
 
         & button {
             @include buttons;
@@ -22,17 +24,17 @@
         }
 
         &::after {
-            position: absolute;
+            @include absolute($top: 35%, $left: 0);
+            @include logoResponsive("right");
             content: url("../img/rightA.png");
-            top: 35%;
-            left: 0;
             filter: url(#turbTest);
 
         }
     }
 
     &_left {
-        background: no-repeat center/100% url("../img/background/bgLeft.png");
+        @include doorsResponsive("bot");
+        background: no-repeat center/cover url("../img/background/bgLeft.png");
         top: 0;
         left: 0;
 
@@ -47,27 +49,20 @@
         }
 
         &::after {
-            position: absolute;
+            @include logoResponsive("left");
+            @include absolute($top: 35%, $right: 0, $width: auto);
             content: url("../img/leftA.png");
-            top: 35%;
-            right: 0;
             filter: url(#turbTest);
 
         }
     }
 
     &_top {
-        position: absolute;
-        height: 50vh;
-        width: 100vw;
+        @include absolute($top: -50%, $width: 100vw, $height: 50vh, $index: 3);
+        @include display(flex, $align-items: center, $justify-content: center);
         border-bottom: double $light-color;
-        z-index: 3;
-        top: -50%;
         background: center/cover url('../img/background/fondDoorsBottom.png');
         color: $light-color;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         text-transform: uppercase;
         font-size: 10rem;
         overflow: hidden;
@@ -76,24 +71,18 @@
             position: absolute;
             bottom: -20%;
         }
-
     }
 
     &_bottom {
+        @include absolute($bottom: -50%, $height: 50vh, $width: 100vw, $index: 3);
+        @include display(flex, $align-items: center, $justify-content: center);
         overflow: hidden;
-        position: absolute;
-        height: 50vh;
-        width: 100vw;
         border-top: double $darkness-color;
-        z-index: 3;
-        bottom: -50%;
         background: center/cover url('../img/background/fondDoorsTop.png');
         color: $darkness-color;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         text-transform: uppercase;
         font-size: 10rem;
+        overflow: hidden;
 
         p {
             position: absolute;

@@ -1,0 +1,67 @@
+$breakpoints: (
+    phone: 550px,
+    tablet: 820px,
+    laptops:1024px,
+    desktops:1200px,
+    tv:3200px
+);
+
+//media size
+@mixin mediaTextSize($phone: initial, $tablet: initial, $laptop: initial) {
+    @media screen and (max-width: map-get($breakpoints, phone)) {
+        font-size: $phone;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, phone)) and (max-width: map-get($breakpoints, tablet)) {
+        font-size: $tablet;
+    }
+
+    @media screen and (min-width:map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, laptops)) {
+        font-size: $laptop;
+    }
+
+    @media screen and (min-width:map-get($breakpoints, laptops)) {
+        font-size: 4rem;
+    }
+}
+
+@mixin doorsResponsive($position) {
+    @media screen and (max-width: map-get($breakpoints, phone)) {
+        @if $position =="top" {
+            @include absolute($width: 100vw, $height: 50vh, $top: 0);
+
+            button {
+                min-width: 60vw;
+            }
+        }
+
+        @if $position =="bot" {
+
+            @include absolute($width: 100vw, $height: 50vh, $bottom: 0);
+
+            button {
+                min-width: 60vw;
+            }
+        }
+    }
+
+    @media screen and (max-width: map-get($breakpoints, tablet)) {}
+
+    @media screen and (max-width: map-get($breakpoints, laptop)) {}
+}
+
+;
+
+@mixin logoResponsive($logo) {
+    @media screen and (max-width: map-get($breakpoints, phone)) {
+        transform: scale(.6);
+
+        @if $logo =="left" {}
+
+        @if $logo =="right" {}
+    }
+
+    @media screen and (max-width: map-get($breakpoints, tablet)) {
+        top: 10%;
+    }
+}

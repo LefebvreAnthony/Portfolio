@@ -1,17 +1,14 @@
 #about {
-    display: grid;
-    grid-template: 70vh / 70vw 20vw;
+    @include display(grid, $grid-template: 70vh/ 70vw 20vw);
     padding: 2% 5%;
 
     #subNav {
         height: 100%;
 
         ul {
+            @include display(flex, $justify-content: space-around, $align-items: center);
             height: 100%;
-            display: flex;
             flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
 
             li {
                 position: relative;
@@ -31,13 +28,8 @@
                 opacity: 1;
 
                 &::after {
-                    content: "";
-                    position: absolute;
-                    top: -2vh;
-                    left: -1.3vw;
+                    @include absolute($top: -2vh, $left: -1.3vw, $width: 145%, $height: 162%, $content: "");
                     filter: url(#turbTest) blur(2px);
-                    width: 145%;
-                    height: 162%;
                     border-bottom: 5px solid;
                     border-top: 5px solid;
                     backdrop-filter: opacity(0.5);
@@ -49,19 +41,9 @@
         }
     }
 
+
     .about {
-        display: grid;
-        grid-template: 20vh 50vh / 70vw;
-
-        #border-nav {
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-        }
-
+        @include display(grid, $grid-template: 20vh 50vh /70vw);
     }
 
     #container_about_me {
@@ -78,13 +60,14 @@
     }
 
     #container_cv {
+        @include display(grid, $justify-items: center);
         position: relative;
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
 
         &--education,
         &--work {
+            position: relative;
+
             h2 {
                 font-size: 3rem;
                 padding-bottom: 2rem;
@@ -105,19 +88,6 @@
         }
 
         &--work {
-            position: relative;
-
-            h2 {
-                position: relative;
-
-                &::before {
-                    // content: url("../../img/svg/work.svg");
-                    position: absolute;
-                    left: -20%;
-                    top: 0;
-                }
-            }
-
             ul ul {
                 padding-left: 3rem;
 
@@ -134,12 +104,7 @@
             }
 
             &::before {
-                content: "";
-                position: absolute;
-                top: 20%;
-                left: -30%;
-                height: 50%;
-                width: .5rem;
+                @include absolute($top: 20%, $left: -30%, $height: 50%, $width: .5rem, $content: "");
                 filter: blur(2px) url(#turbTest);
                 border-left: .3rem solid $light-color;
                 opacity: .9;
@@ -148,9 +113,7 @@
     }
 
     #download {
-        position: absolute;
-        bottom: 2%;
-        left: 45.5%;
+        @include absolute($bottom: 2%, $left: 45.5%, $width: auto, $height: auto);
         cursor: pointer;
 
         path {
@@ -181,9 +144,7 @@
 
     //PAGE SKILLS
     #container_skills {
-        display: grid;
-        justify-items: center;
-        align-items: center;
+        @include display(grid, $justify-items: center, $align-items: center);
 
         svg {
             transform: scale(1.3);
@@ -210,8 +171,7 @@
 
     //PAGE CONTACT
     #container_contact--title {
-        align-self: center;
-        display: flex;
+        @include alignSelf;
 
         h2 {
             font-size: 4.2rem;
@@ -220,13 +180,10 @@
         }
 
         ul {
-            display: flex;
-            align-self: center;
+            @include alignSelf;
 
             li {
                 margin-right: 3vw;
-
-                // border-top: 1px dashed $light-color;
 
                 svg {
                     transition: transform .3s;
@@ -254,17 +211,12 @@
     //* Form CSS
 
     #modal_error {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        width: 100vw;
-        height: 100vh;
+        @include absolute($top: 0, $left: 0, $width: 100vw, $height: 100vh, $index: 2);
+        display: flex;
         color: $darkness-color;
         background-color: #181818ab;
         backdrop-filter: blur(6px);
         text-align: center;
-        display: flex;
 
         .invalid {
             color: $invalid-color;
@@ -283,9 +235,7 @@
             padding: 4rem 8rem;
 
             span {
-                position: absolute;
-                right: 5%;
-                top: 5%;
+                @include absolute($top: 5%, $right: 5%);
                 font-size: 6rem;
                 cursor: pointer;
             }
@@ -296,22 +246,20 @@
         text-align: center;
 
         fieldset {
-            border: none;
-            display: flex;
+            @include display(flex, $align-items: center);
             flex-direction: column;
-            align-items: center;
+            border: none;
 
             label {
                 position: relative;
                 color: $invalid-color;
                 visibility: hidden;
                 min-width: 15vw;
+                font-weight: 700;
 
                 &::after {
+                    @include absolute($right: -5vw, $bottom: 2vh);
                     content: "*";
-                    position: absolute;
-                    right: -5vw;
-                    bottom: -2vh;
                 }
             }
 
@@ -337,9 +285,7 @@
             font: 1.4rem $font-text;
             font-weight: 900;
             border: none;
-            // border-bottom: 2px solid $light-color;
             border-left: 2px solid $light-color;
-            // border-right: 2px solid $light-color;
             color: $light-color;
             background: local;
             padding: .5rem;
@@ -372,11 +318,8 @@
 
     //! about transition nav
     &-transition {
-        position: absolute;
-        height: 100%;
-        top: 0;
-        left: 0;
-        width: 6vw;
+        @include absolute($top: 0, $left: 0, $width: 6vw, $height: 100%);
+        overflow: hidden;
         background-color: #181818;
         border-left: 1rem solid $light-color;
         filter: blur(5px) url(#turbTest);

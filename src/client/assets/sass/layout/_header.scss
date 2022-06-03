@@ -1,12 +1,13 @@
 header {
     .container_flex {
-        display: grid;
-        grid-template: 20vh / 15vw 70vw 15vw;
-        place-items: center;
-        align-content: center;
+        @include display(grid, $grid-template: 20vh/15vw 70vw 15vw, $place-items: center, $align-content: center);
 
         figure {
             padding-left: 2rem;
+
+            svg {
+                height: 8rem;
+            }
         }
 
         h1 {
@@ -22,24 +23,15 @@ header {
             z-index: 2;
 
             p:nth-of-type(1) {
-                position: absolute;
-                top: 7%;
-                left: -10%;
+                @include absolute($top: 7%, $left: -10%, $content: "");
                 font: bold 1rem $font-text;
             }
         }
     }
 
     nav {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        z-index: 1;
-        top: -100%;
-        left: 0;
-        height: 100%;
-        width: 100%;
+        @include absolute($top: -100%, $left: 0, $height: 100%, $width: 100%, $index: 1, $content: "");
+        @include display(flex, $align-items: center, $justify-content: center);
         font: bold 4.5rem $font-text;
         text-transform: uppercase;
         background-color: var(--bgNav);
@@ -60,18 +52,13 @@ header {
             opacity: 1;
 
             &::after {
-                content: "";
-                position: absolute;
-                top: -2vh;
-                left: -1.3vw;
+                @include absolute($top: -2vh, $left: -1.3vw, $width: 145%, $height: 162%, $content: "");
+                @include subNavActive;
                 filter: url(#turbTest) blur(2px);
-                width: 145%;
-                height: 162%;
                 border-bottom: 5px solid;
                 border-top: 5px solid;
                 backdrop-filter: opacity(0.5);
                 border-radius: 1.2rem;
-                @include subNavActive;
                 transform-origin: center;
             }
         }
