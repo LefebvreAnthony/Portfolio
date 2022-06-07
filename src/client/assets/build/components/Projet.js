@@ -39,7 +39,7 @@ export class ProjectContent {
 
         this.figure.appendChild(this.img);
         this.containerTechnos.append(this.h3, this.ul);
-        this.containerDescription.append(this.beforeDesc, this.h2, this.pDescription, this.btnSee, this.btnGit, this.containerTechnos);
+        this.containerDescription.append(this.beforeDesc, this.h2, this.pDescription, this.containerTechnos, this.btnSee, this.btnGit);
         this.arrowBot.appendChild(Arrows.arrowDown("#181818"));
         this.arrowTop.appendChild(Arrows.arrowUp("#181818"));
 
