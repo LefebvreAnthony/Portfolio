@@ -3,7 +3,7 @@ main {
     .main_project {
         @include display(grid, $grid-template: 70vh/30vw 70vw);
         position: relative;
-        padding-top: 4vw;
+        padding-top: 2vw;
 
         @media screen and (max-width: map-get($breakpoints, phone)) {
             padding: 0;
@@ -23,23 +23,29 @@ main {
             }
 
             img {
-                @media screen and (max-width: map-get($breakpoints, phone)) {
+                @media screen and (max-width: map-get($breakpoints, laptops)) {
                     clip-path: none;
                 }
 
                 clip-path: url(#blob);
                 width: 100%;
-                height: 70%;
+                height: 100%;
                 transform: translateX(calc(700px/1.75));
             }
         }
 
+        svg clipPath {
+            @media screen and (min-width: map-get($breakpoints, laptops)) {
+                transform: scale(.9);
+            }
+        }
+
         .project_description {
-            // position: relative;
+            position: relative;
             padding: 0 10%;
 
             @media screen and (max-width: map-get($breakpoints, phone)) {
-                height: 45vh;
+                height: 50vh;
                 padding: 0;
                 text-align: center;
             }
@@ -50,7 +56,7 @@ main {
             }
 
             p {
-                @include mediaTextSize(2rem);
+                @include mediaTextSize(1.5rem);
                 padding-top: 3rem;
             }
 
@@ -59,10 +65,14 @@ main {
                 @include absolute($right: 10%, $bottom: 30%, $width: auto, $height: auto);
                 @include paddingSize(1.2rem, 6rem, 1.2rem, 6rem);
 
-                @media screen and (max-width: map-get($breakpoints, phone)) {
+                @media screen and (max-width: map-get($breakpoints, laptops)) {
                     bottom: 0;
                     left: 10%;
                     right: initial;
+                }
+
+                @media screen and (max-width: map-get($breakpoints, desktops)) {
+                    bottom: 25%;
                 }
 
                 font-family: $font-text;
@@ -82,10 +92,16 @@ main {
                 @include paddingSize(1.2rem, 2rem, 1.2rem, 2rem);
 
                 @media screen and (max-width: map-get($breakpoints, phone)) {
-                    bottom: 0;
+                    bottom: 25%;
                     right: 10%;
                     left: initial;
                     padding: 0.2rem;
+                }
+
+                @media screen and (min-width:map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, laptops)) {
+                    bottom: 25%;
+                    padding: 0.2rem;
+                    left: initial;
                 }
 
                 bottom: 45%;
@@ -119,7 +135,7 @@ main {
                     height: 30vh;
                     width: 15vw;
 
-                    @media screen and (max-width: map-get($breakpoints, phone)) {
+                    @media screen and (max-width: map-get($breakpoints, laptops)) {
                         height: auto;
                         width: auto;
                         justify-content: space-around;
@@ -136,6 +152,11 @@ main {
             // DIV TRANSITION
             &--before {
                 @include absolute($top: 0, $left: 0, $height: 75%, $index: 1);
+
+                @media screen and (max-width: map-get($breakpoints, desktops)) {
+                    height: 90%;
+                }
+
                 border-right: 5px solid $darkness-color;
                 background: $light-color;
                 filter: url(#turbTest) blur(1px);
@@ -143,20 +164,24 @@ main {
         }
 
         #arrow-down {
-            @include absolute($left: 50%, $bottom: 30vh, $width: auto, $height: auto);
+            @include absolute($left: 50%, $bottom: 20vh, $width: auto, $height: auto);
 
             @media screen and (max-width: map-get($breakpoints, phone)) {
                 bottom: 2%;
                 right: 10%;
                 left: initial;
-
-                cursor: pointer;
-                opacity: .5;
             }
+
+            @media screen and (min-width: map-get($breakpoints, laptops)) and (max-width: map-get($breakpoints, desktops)) {
+                bottom: 20%;
+            }
+
+            opacity: .5;
+            cursor: pointer;
         }
 
         #arrow-up {
-            @include absolute($left: 50%, $top: 0, $width: auto);
+            @include absolute($left: 50%, $top: -1vh, $width: auto);
             height: auto;
             cursor: pointer;
             opacity: .5;
@@ -165,7 +190,10 @@ main {
                 bottom: 2%;
                 left: 10%;
                 top: initial;
+            }
 
+            @media screen and (min-width: map-get($breakpoints, laptops)) and (max-width: map-get($breakpoints, desktops)) {
+                top: -5%;
             }
         }
 

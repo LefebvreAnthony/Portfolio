@@ -1,8 +1,8 @@
 $breakpoints: (
     phone: 550px,
     tablet: 820px,
-    laptops:1024px,
-    desktops:1200px,
+    laptops:1080px,
+    desktops:1700px,
     tv:3200px
 );
 
@@ -21,6 +21,10 @@ $breakpoints: (
     }
 
     @media screen and (min-width:map-get($breakpoints, laptops)) {
+        font-size: calc($size/ 1.25);
+    }
+
+    @media screen and (min-width:map-get($breakpoints, desktops)) {
         font-size: $size;
     }
 }
@@ -90,6 +94,10 @@ $breakpoints: (
     }
 
     @media screen and (min-width:map-get($breakpoints, laptops)) {
+        width: calc($size/ 1.25);
+    }
+
+    @media screen and (min-width:map-get($breakpoints, desktops)) {
         width: $size;
     }
 }

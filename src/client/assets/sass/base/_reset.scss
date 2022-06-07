@@ -7,6 +7,10 @@
 }
 
 body {
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+        overflow: hidden;
+    }
+
     font-family: $font-text;
 }
 

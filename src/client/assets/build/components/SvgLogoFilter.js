@@ -24,7 +24,7 @@ export function SvgLogoFilter() {
 
     setInterval(() => {
 
-        if (window.getComputedStyle(doorsLeft).left.split("p")[0] <= -400 || window.getComputedStyle(doorsLeft).bottom.split("p")[0] <= -300) {
+        if (window.getComputedStyle(doorsLeft).left.split("p")[0] <= -300 || window.getComputedStyle(doorsLeft).bottom.split("p")[0] <= -300) {
             clearInterval(lolo)
             lolo = null;
         } else {
