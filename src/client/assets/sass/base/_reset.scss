@@ -10,3 +10,9 @@ body {
     overflow: hidden;
     font-family: $font-text;
 }
+
+;
+
+h2 {
+    @include mediaTextSize(3rem);
+}

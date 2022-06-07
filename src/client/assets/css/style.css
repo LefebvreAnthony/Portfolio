@@ -11,6 +11,27 @@ body {
   font-family: Cormorant;
 }
 
+@media screen and (max-width: 550px) {
+  h2 {
+    font-size: 1.7142857143rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  h2 {
+    font-size: 2.4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 3rem;
+  }
+}
+
 @font-face {
   font-family: Hillshort;
   src: url("../font/Hillshort.otf");
@@ -35,12 +56,50 @@ header .container_flex {
 header .container_flex figure {
   padding-left: 2rem;
 }
-header .container_flex figure svg {
-  height: 8rem;
+@media screen and (max-width: 550px) {
+  header .container_flex figure svg {
+    width: 4.5714285714rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  header .container_flex figure svg {
+    width: 5.3333333333rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  header .container_flex figure svg {
+    width: 6.4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header .container_flex figure svg {
+    width: 8rem;
+  }
 }
 header .container_flex h1 {
-  font: normal 4.5rem Disco;
+  font-family: Disco;
+  font-weight: normal;
   text-transform: uppercase;
+}
+@media screen and (max-width: 550px) {
+  header .container_flex h1 {
+    font-size: 2.5714285714rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  header .container_flex h1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  header .container_flex h1 {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header .container_flex h1 {
+    font-size: 4.5rem;
+  }
 }
 header .container_flex div {
   position: relative;
@@ -48,6 +107,26 @@ header .container_flex div {
   padding-right: 2rem;
   justify-self: end;
   z-index: 2;
+}
+@media screen and (max-width: 550px) {
+  header .container_flex div svg {
+    width: 45.1428571429px;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  header .container_flex div svg {
+    width: 52.6666666667px;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  header .container_flex div svg {
+    width: 63.2px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header .container_flex div svg {
+    width: 79px;
+  }
 }
 header .container_flex div p:nth-of-type(1) {
   content: "";
@@ -59,7 +138,27 @@ header .container_flex div p:nth-of-type(1) {
   width: 0;
   height: 0;
   z-index: "";
-  font: bold 1rem Cormorant;
+  font-weight: bold;
+}
+@media screen and (max-width: 550px) {
+  header .container_flex div p:nth-of-type(1) {
+    font-size: 0.5714285714rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  header .container_flex div p:nth-of-type(1) {
+    font-size: 0.6666666667rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  header .container_flex div p:nth-of-type(1) {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header .container_flex div p:nth-of-type(1) {
+    font-size: 1rem;
+  }
 }
 header nav {
   content: "";
@@ -78,10 +177,31 @@ header nav {
   justify-items: "";
   justify-content: center;
   grid-template: "";
-  font: bold 4.5rem Cormorant;
+  font-family: Cormorant;
+  font-weight: 900;
   text-transform: uppercase;
   background-color: var(--bgNav);
   text-align: center;
+}
+@media screen and (max-width: 550px) {
+  header nav {
+    font-size: 2.5714285714rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  header nav {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  header nav {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header nav {
+    font-size: 4.5rem;
+  }
 }
 header nav li {
   margin: 5rem;
@@ -194,22 +314,22 @@ header nav .active::after {
 }
 @media screen and (max-width: 550px) {
   .doors_right button {
-    font-size: 2rem;
+    font-size: 1.7142857143rem;
   }
 }
 @media screen and (min-width: 550px) and (max-width: 820px) {
   .doors_right button {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
 }
 @media screen and (min-width: 820px) and (max-width: 1024px) {
   .doors_right button {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
 }
 @media screen and (min-width: 1024px) {
   .doors_right button {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 .doors_right button:hover {
@@ -231,9 +351,14 @@ header nav .active::after {
 @media screen and (max-width: 550px) {
   .doors_right::after {
     transform: scale(0.6);
+    content: url("../img/logoDark.png");
+    top: auto;
+    bottom: 20%;
+    left: 30%;
+    filter: invert(1) url(#turbTest);
   }
 }
-@media screen and (max-width: 820px) {
+@media screen and (min-width: 550px) and (max-width: 820px) {
   .doors_right::after {
     top: 10%;
   }
@@ -274,22 +399,22 @@ header nav .active::after {
 }
 @media screen and (max-width: 550px) {
   .doors_left button {
-    font-size: 2rem;
+    font-size: 1.7142857143rem;
   }
 }
 @media screen and (min-width: 550px) and (max-width: 820px) {
   .doors_left button {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
 }
 @media screen and (min-width: 820px) and (max-width: 1024px) {
   .doors_left button {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
 }
 @media screen and (min-width: 1024px) {
   .doors_left button {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 .doors_left button:hover {
@@ -311,9 +436,12 @@ header nav .active::after {
 @media screen and (max-width: 550px) {
   .doors_left::after {
     transform: scale(0.6);
+    content: url("../img/logoDark.png");
+    top: -20%;
+    left: 13%;
   }
 }
-@media screen and (max-width: 820px) {
+@media screen and (min-width: 550px) and (max-width: 820px) {
   .doors_left::after {
     top: 10%;
   }
@@ -403,11 +531,31 @@ main .main_project .project_description {
   opacity: 1;
 }
 main .main_project .project_description h2 {
-  font: 3rem bold Cormorant;
+  font-family: Cormorant;
+  font-weight: 900;
 }
 main .main_project .project_description p {
   padding-top: 3rem;
-  font: 2rem Cormorant;
+}
+@media screen and (max-width: 550px) {
+  main .main_project .project_description p {
+    font-size: 1.1428571429rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  main .main_project .project_description p {
+    font-size: 1.3333333333rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  main .main_project .project_description p {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .main_project .project_description p {
+    font-size: 2rem;
+  }
 }
 main .main_project .project_description button {
   position: absolute;
@@ -418,12 +566,52 @@ main .main_project .project_description button {
   width: auto;
   height: auto;
   z-index: "";
-  padding: 1.2rem 6rem;
-  font: 2rem bold Cormorant;
+  font-family: Cormorant;
+  font-weight: 900;
   border-radius: 1rem;
   background-color: transparent;
   cursor: pointer;
   transition: 0.3s;
+}
+@media screen and (max-width: 550px) {
+  main .main_project .project_description button {
+    font-size: 1.1428571429rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  main .main_project .project_description button {
+    font-size: 1.3333333333rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  main .main_project .project_description button {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .main_project .project_description button {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  main .main_project .project_description button {
+    padding: 0.6857142857rem 3.4285714286rem 0.6857142857rem 3.4285714286rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  main .main_project .project_description button {
+    padding: 0.8rem 4rem 0.8rem 4rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  main .main_project .project_description button {
+    padding: 0.96rem 4.8rem 0.96rem 4.8rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .main_project .project_description button {
+    padding: 1.2rem 6rem 1.2rem 6rem;
+  }
 }
 main .main_project .project_description button:hover {
   background-color: #181818;
@@ -432,8 +620,47 @@ main .main_project .project_description button:hover {
 main .main_project .project_description .btn_git {
   bottom: 45%;
   right: 16%;
-  padding: 1.2rem 2rem;
   transition: all 1.5s;
+}
+@media screen and (max-width: 550px) {
+  main .main_project .project_description .btn_git {
+    padding: 0.6857142857rem 1.1428571429rem 0.6857142857rem 1.1428571429rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  main .main_project .project_description .btn_git {
+    padding: 0.8rem 1.3333333333rem 0.8rem 1.3333333333rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  main .main_project .project_description .btn_git {
+    padding: 0.96rem 1.6rem 0.96rem 1.6rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .main_project .project_description .btn_git {
+    padding: 1.2rem 2rem 1.2rem 2rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  main .main_project .project_description .btn_git svg {
+    width: 49.1428571429px;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  main .main_project .project_description .btn_git svg {
+    width: 57.3333333333px;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  main .main_project .project_description .btn_git svg {
+    width: 68.8px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .main_project .project_description .btn_git svg {
+    width: 86px;
+  }
 }
 main .main_project .project_description .btn_git:hover path {
   fill: #EBEAEC;
@@ -444,15 +671,54 @@ main .main_project .project_description .list_technos {
 main .main_project .project_description .list_technos h3 {
   text-transform: capitalize;
   align-self: center;
-  font-size: 1.5rem;
   font-weight: bold;
   padding-bottom: 1rem;
+}
+@media screen and (max-width: 550px) {
+  main .main_project .project_description .list_technos h3 {
+    font-size: 0.8571428571rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  main .main_project .project_description .list_technos h3 {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  main .main_project .project_description .list_technos h3 {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .main_project .project_description .list_technos h3 {
+    font-size: 1.5rem;
+  }
 }
 main .main_project .project_description .list_technos ul {
   display: flex;
   flex-flow: column wrap;
   height: 30vh;
   width: 15vw;
+}
+@media screen and (max-width: 550px) {
+  main .main_project .project_description .list_technos img {
+    width: 40px;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  main .main_project .project_description .list_technos img {
+    width: 46.6666666667px;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  main .main_project .project_description .list_technos img {
+    width: 56px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .main_project .project_description .list_technos img {
+    width: 70px;
+  }
 }
 main .main_project .project_description--before {
   position: absolute;
@@ -503,7 +769,26 @@ main .hide {
   justify-items: "";
   justify-content: "";
   grid-template: 70vh/70vw 20vw;
-  padding: 2% 5%;
+}
+@media screen and (max-width: 550px) {
+  #about {
+    padding: 1.1428571429% 2.8571428571% 1.1428571429% 2.8571428571%;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about {
+    padding: 1.3333333333% 3.3333333333% 1.3333333333% 3.3333333333%;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about {
+    padding: 1.6% 4% 1.6% 4%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about {
+    padding: 2% 5% 2% 5%;
+  }
 }
 #about #subNav {
   height: 100%;
@@ -521,11 +806,31 @@ main .hide {
 }
 #about #subNav ul li {
   position: relative;
-  font: 3rem Disco;
+  font-family: Disco;
   text-transform: uppercase;
   cursor: pointer;
   opacity: 0.5;
   transition: all 0.3s;
+}
+@media screen and (max-width: 550px) {
+  #about #subNav ul li {
+    font-size: 1.7142857143rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about #subNav ul li {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about #subNav ul li {
+    font-size: 2.4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about #subNav ul li {
+    font-size: 3rem;
+  }
 }
 #about #subNav ul li:hover {
   opacity: 1;
@@ -580,12 +885,48 @@ main .hide {
 #about #container_about_me {
   width: 60%;
 }
-#about #container_about_me p:first-child {
-  font-size: 2.5rem;
+@media screen and (max-width: 550px) {
+  #about #container_about_me p:first-child {
+    font-size: 1.4285714286rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about #container_about_me p:first-child {
+    font-size: 1.6666666667rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about #container_about_me p:first-child {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about #container_about_me p:first-child {
+    font-size: 2.5rem;
+  }
 }
 #about #container_about_me .soft {
   opacity: 0.6;
-  font-size: 1.5rem;
+}
+@media screen and (max-width: 550px) {
+  #about #container_about_me .soft {
+    font-size: 0.8571428571rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about #container_about_me .soft {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about #container_about_me .soft {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about #container_about_me .soft {
+    font-size: 1.5rem;
+  }
 }
 #about #container_cv {
   display: grid;
@@ -601,19 +942,91 @@ main .hide {
 #about #container_cv--education, #about #container_cv--work {
   position: relative;
 }
-#about #container_cv--education h2, #about #container_cv--work h2 {
-  font-size: 3rem;
-  padding-bottom: 2rem;
+@media screen and (max-width: 550px) {
+  #about #container_cv--education h2, #about #container_cv--work h2 {
+    padding: 0 0 1.1428571429rem 0;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about #container_cv--education h2, #about #container_cv--work h2 {
+    padding: 0 0 1.3333333333rem 0;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about #container_cv--education h2, #about #container_cv--work h2 {
+    padding: 0 0 1.6rem 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about #container_cv--education h2, #about #container_cv--work h2 {
+    padding: 0 0 2rem 0;
+  }
 }
 #about #container_cv--education li, #about #container_cv--work li {
-  padding-bottom: 1.2rem;
   list-style: circle;
 }
-#about #container_cv--education li h4, #about #container_cv--work li h4 {
-  font-size: 1.5rem;
+@media screen and (max-width: 550px) {
+  #about #container_cv--education li, #about #container_cv--work li {
+    padding: 0 0 0.6857142857rem 0;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about #container_cv--education li, #about #container_cv--work li {
+    padding: 0 0 0.8rem 0;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about #container_cv--education li, #about #container_cv--work li {
+    padding: 0 0 0.96rem 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about #container_cv--education li, #about #container_cv--work li {
+    padding: 0 0 1.2rem 0;
+  }
+}
+@media screen and (max-width: 550px) {
+  #about #container_cv--education li h4, #about #container_cv--work li h4 {
+    font-size: 0.8571428571rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about #container_cv--education li h4, #about #container_cv--work li h4 {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about #container_cv--education li h4, #about #container_cv--work li h4 {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about #container_cv--education li h4, #about #container_cv--work li h4 {
+    font-size: 1.5rem;
+  }
 }
 #about #container_cv--education li p, #about #container_cv--work li p {
   opacity: 0.7;
+}
+@media screen and (max-width: 550px) {
+  #about #container_cv--education li p, #about #container_cv--work li p {
+    font-size: 0.5714285714rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about #container_cv--education li p, #about #container_cv--work li p {
+    font-size: 0.6666666667rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about #container_cv--education li p, #about #container_cv--work li p {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about #container_cv--education li p, #about #container_cv--work li p {
+    font-size: 1rem;
+  }
 }
 #about #container_cv--work ul ul {
   padding-left: 3rem;
@@ -687,6 +1100,26 @@ main .hide {
   transition: all 0.5s ease-out;
   cursor: pointer;
 }
+@media screen and (max-width: 550px) {
+  #about #container_skills svg {
+    width: 53.7142857143px;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about #container_skills svg {
+    width: 62.6666666667px;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about #container_skills svg {
+    width: 75.2px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about #container_skills svg {
+    width: 94px;
+  }
+}
 #about #container_skills svg:hover {
   transform: scale(2);
 }
@@ -705,7 +1138,6 @@ main .hide {
   align-self: center;
 }
 #about #container_contact--title h2 {
-  font-size: 4.2rem;
   text-transform: capitalize;
   margin-right: 10vw;
 }
@@ -755,10 +1187,30 @@ main .hide {
 #about #modal_error p {
   position: relative;
   margin: auto;
-  font: 5rem Disco;
+  font-family: Disco;
   border: 2px solid;
   border-radius: 1rem;
   padding: 4rem 8rem;
+}
+@media screen and (max-width: 550px) {
+  #about #modal_error p {
+    font-size: 2.8571428571rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about #modal_error p {
+    font-size: 3.3333333333rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about #modal_error p {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about #modal_error p {
+    font-size: 5rem;
+  }
 }
 #about #modal_error p span {
   position: absolute;
@@ -769,8 +1221,27 @@ main .hide {
   width: 0;
   height: 0;
   z-index: "";
-  font-size: 6rem;
   cursor: pointer;
+}
+@media screen and (max-width: 550px) {
+  #about #modal_error p span {
+    font-size: 3.4285714286rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about #modal_error p span {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about #modal_error p span {
+    font-size: 4.8rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about #modal_error p span {
+    font-size: 6rem;
+  }
 }
 #about form {
   text-align: center;
@@ -808,7 +1279,7 @@ main .hide {
   min-width: 25vw;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  font: 1.4rem Cormorant;
+  font-family: Cormorant;
   font-weight: 900;
   outline: none;
   background: local;
@@ -817,11 +1288,31 @@ main .hide {
   color: #EBEAEC;
   caret-color: rgba(255, 255, 255, 0.184);
 }
+@media screen and (max-width: 550px) {
+  #about form fieldset input {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about form fieldset input {
+    font-size: 0.9333333333rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about form fieldset input {
+    font-size: 1.12rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about form fieldset input {
+    font-size: 1.4rem;
+  }
+}
 #about form textarea {
   margin: 0 10vw;
   width: 50vw;
   outline: none;
-  font: 1.4rem Cormorant;
+  font-family: Cormorant;
   font-weight: 900;
   border: none;
   border-left: 2px solid #EBEAEC;
@@ -831,9 +1322,29 @@ main .hide {
   padding-left: 2rem;
   resize: none;
 }
+@media screen and (max-width: 550px) {
+  #about form textarea {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about form textarea {
+    font-size: 0.9333333333rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about form textarea {
+    font-size: 1.12rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about form textarea {
+    font-size: 1.4rem;
+  }
+}
 #about form #submit {
   padding: 0.5rem 4rem;
-  font: 2.5rem Disco;
+  font-family: Disco;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
@@ -844,6 +1355,26 @@ main .hide {
   text-align: center;
   cursor: pointer;
   transition: all 0.3s;
+}
+@media screen and (max-width: 550px) {
+  #about form #submit {
+    font-size: 1.4285714286rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about form #submit {
+    font-size: 1.6666666667rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+  #about form #submit {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #about form #submit {
+    font-size: 2.5rem;
+  }
 }
 #about form #submit:hover {
   background: #181818;

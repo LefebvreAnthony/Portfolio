@@ -7,21 +7,21 @@ $breakpoints: (
 );
 
 //media size
-@mixin mediaTextSize($phone: initial, $tablet: initial, $laptop: initial) {
+@mixin mediaTextSize($size) {
     @media screen and (max-width: map-get($breakpoints, phone)) {
-        font-size: $phone;
+        font-size: calc($size/ 1.75);
     }
 
     @media screen and (min-width: map-get($breakpoints, phone)) and (max-width: map-get($breakpoints, tablet)) {
-        font-size: $tablet;
+        font-size: calc($size/ 1.5);
     }
 
     @media screen and (min-width:map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, laptops)) {
-        font-size: $laptop;
+        font-size: calc($size/ 1.25);
     }
 
     @media screen and (min-width:map-get($breakpoints, laptops)) {
-        font-size: 4rem;
+        font-size: $size;
     }
 }
 
@@ -50,18 +50,67 @@ $breakpoints: (
     @media screen and (max-width: map-get($breakpoints, laptop)) {}
 }
 
-;
-
 @mixin logoResponsive($logo) {
     @media screen and (max-width: map-get($breakpoints, phone)) {
         transform: scale(.6);
 
-        @if $logo =="left" {}
+        @if $logo =="left" {
+            content: url("../img/logoDark.png");
+            top: -20%;
+            left: 13%;
+        }
 
-        @if $logo =="right" {}
+        @if $logo =="right" {
+            content: url("../img/logoDark.png");
+            top: auto;
+            bottom: 20%;
+            left: 30%;
+            filter: invert(1) url(#turbTest);
+        }
     }
 
-    @media screen and (max-width: map-get($breakpoints, tablet)) {
+    @media screen and (min-width: map-get($breakpoints, phone)) and (max-width: map-get($breakpoints, tablet)) {
         top: 10%;
+    }
+}
+
+//IMG SIZE
+@mixin imgSize($size) {
+
+    @media screen and (max-width: map-get($breakpoints, phone)) {
+        width: calc($size/ 1.75);
+    }
+
+    @media screen and (min-width: map-get($breakpoints, phone)) and (max-width: map-get($breakpoints, tablet)) {
+        width: calc($size/ 1.5);
+    }
+
+    @media screen and (min-width:map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, laptops)) {
+        width: calc($size/ 1.25);
+    }
+
+    @media screen and (min-width:map-get($breakpoints, laptops)) {
+        width: $size;
+    }
+}
+
+// PADDING SIZE
+
+@mixin paddingSize($size-top: 0, $size-right: 0, $size-bottom: 0, $size-left: 0) {
+
+    @media screen and (max-width: map-get($breakpoints, phone)) {
+        padding: calc($size-top/ 1.75) calc($size-right/ 1.75) calc($size-bottom/ 1.75) calc($size-left/ 1.75);
+    }
+
+    @media screen and (min-width: map-get($breakpoints, phone)) and (max-width: map-get($breakpoints, tablet)) {
+        padding: calc($size-top/ 1.50) calc($size-right/ 1.50) calc($size-bottom/ 1.50) calc($size-left/ 1.50);
+    }
+
+    @media screen and (min-width:map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, laptops)) {
+        padding: calc($size-top/ 1.25) calc($size-right/ 1.25) calc($size-bottom/ 1.25) calc($size-left/ 1.25);
+    }
+
+    @media screen and (min-width:map-get($breakpoints, laptops)) {
+        padding: $size-top $size-right $size-bottom $size-left;
     }
 }

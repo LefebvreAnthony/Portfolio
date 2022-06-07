@@ -2,9 +2,7 @@
 
 export function SvgLogoFilter() {
     let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    let doorsLeft = document.querySelector(".doors_left")
-    let sw = 20 * (window.innerWidth / 100);
-    let sh = 70 * (window.innerHeight / 100);
+    let doorsLeft = document.querySelector(".doors_left");
     let yes = 0.05
     let lol = 0.001;
     svg.style.display = "none";
@@ -26,7 +24,7 @@ export function SvgLogoFilter() {
 
     setInterval(() => {
 
-        if (window.getComputedStyle(doorsLeft).left.split("p")[0] <= -700) {
+        if (window.getComputedStyle(doorsLeft).left.split("p")[0] <= -400 || window.getComputedStyle(doorsLeft).bottom.split("p")[0] <= -300) {
             clearInterval(lolo)
             lolo = null;
         } else {

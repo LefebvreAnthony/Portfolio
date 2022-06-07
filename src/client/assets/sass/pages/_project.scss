@@ -25,18 +25,21 @@ main {
             opacity: 1;
 
             h2 {
-                font: 3rem bold $font-text;
+                font-family: $font-text;
+                font-weight: 900;
             }
 
             p {
+                @include mediaTextSize(2rem);
                 padding-top: 3rem;
-                font: 2rem $font-text;
             }
 
             button {
+                @include mediaTextSize(2rem);
                 @include absolute($right: 10%, $bottom: 30%, $width: auto, $height: auto);
-                padding: 1.2rem 6rem;
-                font: 2rem bold $font-text;
+                @include paddingSize(1.2rem, 6rem, 1.2rem, 6rem);
+                font-family: $font-text;
+                font-weight: 900;
                 border-radius: 1rem;
                 background-color: transparent;
                 cursor: pointer;
@@ -49,10 +52,14 @@ main {
             }
 
             .btn_git {
+                @include paddingSize(1.2rem, 2rem, 1.2rem, 2rem);
                 bottom: 45%;
                 right: 16%;
-                padding: 1.2rem 2rem;
                 transition: all 1.5s;
+
+                svg {
+                    @include imgSize(86px);
+                }
 
                 &:hover path {
                     fill: $light-color;
@@ -63,9 +70,9 @@ main {
                 padding-top: 3%;
 
                 h3 {
+                    @include mediaTextSize(1.5rem);
                     text-transform: capitalize;
                     align-self: center;
-                    font-size: 1.5rem;
                     font-weight: bold;
                     padding-bottom: 1rem;
                 }
@@ -75,6 +82,10 @@ main {
                     flex-flow: column wrap;
                     height: 30vh;
                     width: 15vw;
+                }
+
+                img {
+                    @include imgSize(70px);
                 }
             }
 
