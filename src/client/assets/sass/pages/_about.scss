@@ -2,11 +2,21 @@
     @include display(grid, $grid-template: 70vh/ 70vw 20vw);
     @include paddingSize(2%, 5%, 2%, 5%);
 
+    @media screen and (max-width: map-get($breakpoints, laptops)) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
     #subNav {
         height: 100%;
 
         ul {
             @include display(flex, $justify-content: space-around, $align-items: center);
+
+            @media screen and (max-width: map-get($breakpoints, laptops)) {
+                flex-direction: initial;
+            }
+
             height: 100%;
             flex-direction: column;
 
@@ -30,6 +40,12 @@
 
                 &::after {
                     @include absolute($top: -2vh, $left: -1.3vw, $width: 145%, $height: 162%, $content: "");
+
+                    @media screen and (max-width: map-get($breakpoints, laptops)) {
+                        top: -1.5vh;
+                        left: -2.5vw;
+                    }
+
                     filter: url(#turbTest) blur(2px);
                     border-bottom: 5px solid;
                     border-top: 5px solid;
@@ -42,13 +58,29 @@
         }
     }
 
+    .index {
+        @media screen and (max-width: map-get($breakpoints, phone)) {
+            margin-top: 5vh;
+        }
+
+        z-index: 1;
+    }
 
     .about {
         @include display(grid, $grid-template: 20vh 50vh /70vw);
+
+        @media screen and (max-width: map-get($breakpoints, laptops)) {
+            grid-template: 20vh 50vh /90vw;
+        }
     }
 
     #container_about_me {
         width: 60%;
+
+        @media screen and (max-width: map-get($breakpoints, laptops)) {
+            width: 100%;
+            align-self: center;
+        }
 
         p:first-child {
             @include mediaTextSize(2.5rem)
@@ -62,6 +94,15 @@
 
     #container_cv {
         @include display(grid, $justify-items: center);
+
+        @media screen and (max-width: map-get($breakpoints, desktops)) {
+            justify-items: initial;
+        }
+
+        @media screen and (max-width: map-get($breakpoints, phone)) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
         position: relative;
         grid-template-columns: repeat(2, 1fr);
 
@@ -71,18 +112,29 @@
 
             h2 {
                 @include paddingSize($size-bottom: 2rem);
+
+                @media screen and (max-width: map-get($breakpoints, phone)) {
+                    text-align: center;
+                }
+            }
+
+            ul {
+                @media screen and (max-width: map-get($breakpoints, phone)) {
+                    width: 70%;
+                    margin: 0 auto;
+                }
             }
 
             li {
-                @include paddingSize($size-bottom: 1.2rem);
+                @include paddingSize($size-bottom: 1.25rem);
                 list-style: circle;
 
                 h4 {
-                    @include mediaTextSize(1.5rem);
+                    @include mediaTextSize(1.8rem);
                 }
 
                 p {
-                    @include mediaTextSize(1rem);
+                    @include mediaTextSize(1.5rem);
                     opacity: .7;
                 }
             }
@@ -90,6 +142,12 @@
 
         &--work {
             ul ul {
+
+                @media screen and (max-width: map-get($breakpoints, phone)) {
+                    margin: 0;
+                    padding: 0;
+                }
+
                 padding-left: 3rem;
 
                 li {
@@ -115,6 +173,13 @@
 
     #download {
         @include absolute($bottom: 2%, $left: 45.5%, $width: auto, $height: auto);
+
+        @media screen and (max-width: map-get($breakpoints, phone)) {
+            position: fixed;
+            bottom: 0;
+            left: 80%;
+        }
+
         cursor: pointer;
 
         path {
@@ -123,6 +188,14 @@
         }
 
         &-popup {
+            @include mediaTextSize(1.2rem);
+
+            @media screen and (max-width: map-get($breakpoints, phone)) {
+                position: fixed;
+                bottom: 7%;
+                left: 75%;
+            }
+
             padding: .1rem .5rem;
             position: absolute;
             bottom: 13%;
@@ -174,6 +247,7 @@
     //PAGE CONTACT
     #container_contact--title {
         @include alignSelf;
+        justify-content: space-between;
 
         h2 {
             text-transform: capitalize;
@@ -212,7 +286,7 @@
     //* Form CSS
 
     #modal_error {
-        @include absolute($top: 0, $left: 0, $width: 100vw, $height: 100vh, $index: 2);
+        @include absolute($top: 0, $left: 0, $width: 100vw, $height: 100vh, $index: 10);
         display: flex;
         color: $darkness-color;
         background-color: #181818ab;
@@ -237,7 +311,7 @@
             padding: 4rem 8rem;
 
             span {
-                @include absolute($top: 5%, $right: 5%);
+                @include absolute($top: 5%, $right: 5%, $index: 10);
                 @include mediaTextSize(6rem);
                 cursor: pointer;
             }
@@ -246,6 +320,8 @@
 
     form {
         text-align: center;
+        display: flex;
+        flex-direction: column;
 
         fieldset {
             @include display(flex, $align-items: center);
@@ -253,6 +329,10 @@
             border: none;
 
             label {
+                @media screen and (max-width: map-get($breakpoints, laptops)) {
+                    min-width: 35vw;
+                }
+
                 position: relative;
                 color: $invalid-color;
                 visibility: hidden;
@@ -266,7 +346,12 @@
             }
 
             input {
-                @include mediaTextSize(1.4rem);
+                @include mediaTextSize(1.7rem);
+
+                @media screen and (max-width: map-get($breakpoints, laptops)) {
+                    min-width: 50vw;
+                }
+
                 min-width: 25vw;
                 padding: .5rem;
                 margin-bottom: 1rem;
@@ -282,7 +367,13 @@
         }
 
         textarea {
-            @include mediaTextSize(1.4rem);
+            @include mediaTextSize(1.7rem);
+
+            @media screen and (max-width: map-get($breakpoints, laptops)) {
+                margin: 6vh 5vw;
+                width: 80vw;
+            }
+
             margin: 0 10vw;
             width: 50vw;
             outline: none;
@@ -299,6 +390,8 @@
 
         #submit {
             @include mediaTextSize(2.5rem);
+            width: fit-content;
+            align-self: center;
             padding: .5rem 4rem;
             font-family: $font-title;
             font-weight: 900;
@@ -308,7 +401,6 @@
             color: $darkness-color;
             border: none;
             border-radius: .5rem;
-            text-align: center;
             cursor: pointer;
             transition: all .3s;
 
@@ -323,7 +415,14 @@
 
     //! about transition nav
     &-transition {
-        @include absolute($top: 0, $left: 0, $width: 6vw, $height: 100%);
+        @include absolute($top: 0, $left: 0, $width: 6vw, $height: 100%, $index: 2);
+
+        @media screen and (max-width: map-get($breakpoints, laptops)) {
+            @include absolute($top: initial, $left: -3vw, $bottom: -5vh, $width: 97vw, $height: 0);
+            border-bottom: 1rem solid $light-color;
+            border-left: none;
+        }
+
         overflow: hidden;
         background-color: #181818;
         border-left: 1rem solid $light-color;

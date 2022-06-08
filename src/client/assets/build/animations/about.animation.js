@@ -3,11 +3,11 @@
 //? Transitions pages
 export function aboutAnimationTransition() {
     let blockTransition = document.getElementById("about-transition");
+    let kE1 = new KeyframeEffect(blockTransition, [{ width: "72vw", left: "-360%" },], { duration: 1500, iterations: 2, direction: "alternate" });
+    if (window.innerWidth <= 1080) {
+        kE1 = new KeyframeEffect(blockTransition, [{ height: "72vh", bottom: "-76vh" },], { duration: 1500, iterations: 2, direction: "alternate" });
+    }
 
-    let kE1 = new KeyframeEffect(blockTransition, [
-        { width: "72vw", left: "-360%" },
-    ],
-        { duration: 1500, iterations: 2, direction: "alternate" });
     return new Animation(kE1, document.timeline);
 };
 

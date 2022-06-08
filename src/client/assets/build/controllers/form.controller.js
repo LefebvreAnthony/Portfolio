@@ -44,6 +44,8 @@ export function validateForm(form, modal, pModal, container) {
         e.preventDefault();
         let labels = document.querySelectorAll("form fieldset label");
         let inputs = document.querySelectorAll("form fieldset input");
+        let containerAbout = document.querySelector(".about");
+        containerAbout.classList.toggle("index");
         noValidateForm(form.firstName, form.email, form.object);
 
         let myForm = {
@@ -76,7 +78,10 @@ export function validateForm(form, modal, pModal, container) {
                         pModal.appendChild(cancelModal);
                         modal.appendChild(pModal);
                         container.appendChild(modal);
-                        modal.addEventListener("click", () => modal.remove());
+                        modal.addEventListener("click", () => {
+                            containerAbout.classList.toggle("index");
+                            modal.remove();
+                        });
                     } else {
 
                         pModal.textContent = "Error, send mail failed, try again.";
@@ -88,7 +93,10 @@ export function validateForm(form, modal, pModal, container) {
                         modal.appendChild(pModal);
                         container.appendChild(modal);
 
-                        modal.addEventListener("click", () => modal.remove());
+                        modal.addEventListener("click", () => {
+                            containerAbout.classList.toggle("index");
+                            modal.remove();
+                        });
                     }
                 });
         } else {
@@ -100,8 +108,10 @@ export function validateForm(form, modal, pModal, container) {
             pModal.appendChild(cancelModal);
             modal.appendChild(pModal);
             container.appendChild(modal);
-
-            modal.addEventListener("click", () => modal.remove());
+            modal.addEventListener("click", () => {
+                containerAbout.classList.toggle("index");
+                modal.remove();
+            });
         }
 
     })

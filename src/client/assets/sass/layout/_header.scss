@@ -22,7 +22,7 @@ header {
             cursor: pointer;
             padding-right: 2rem;
             justify-self: end;
-            z-index: 2;
+            z-index: 4;
 
             svg {
                 @include imgSize(79px);
@@ -38,7 +38,7 @@ header {
 
     nav {
         @include mediaTextSize(4.5rem);
-        @include absolute($top: -100%, $left: 0, $height: 100%, $width: 100%, $index: 1, $content: "");
+        @include absolute($top: -100%, $left: 0, $height: 100%, $width: 100%, $index: 3, $content: "");
         @include display(flex, $align-items: center, $justify-content: center);
         font-family: $font-text;
         font-weight: 900;
@@ -53,22 +53,6 @@ header {
             &:hover {
 
                 @include subNavHover;
-            }
-        }
-
-        .active {
-
-            opacity: 1;
-
-            &::after {
-                @include absolute($top: -2vh, $left: -1.3vw, $width: 145%, $height: 162%, $content: "");
-                @include subNavActive;
-                filter: url(#turbTest) blur(2px);
-                border-bottom: 5px solid;
-                border-top: 5px solid;
-                backdrop-filter: opacity(0.5);
-                border-radius: 1.2rem;
-                transform-origin: center;
             }
         }
     }

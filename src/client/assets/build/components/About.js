@@ -17,7 +17,7 @@ export class AboutContents {
 
     create() {
         let main = document.querySelector("main");
-        this.container.className = "about";
+        this.container.classList.add("about", "index");
 
         main.setAttribute("id", "about");
 

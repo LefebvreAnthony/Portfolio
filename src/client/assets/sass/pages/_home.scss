@@ -81,7 +81,7 @@
         background: center/cover url('../img/background/fondDoorsTop.png');
         color: $darkness-color;
         text-transform: uppercase;
-        @include mediaTextSize(13rem);
+        @include mediaTextSize(15rem);
         overflow: hidden;
 
         p {

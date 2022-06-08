@@ -125,7 +125,7 @@ header .container_flex div {
   cursor: pointer;
   padding-right: 2rem;
   justify-self: end;
-  z-index: 2;
+  z-index: 4;
 }
 @media screen and (max-width: 550px) {
   header .container_flex div svg {
@@ -198,7 +198,7 @@ header nav {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 3;
   display: flex;
   align-items: center;
   align-content: "";
@@ -250,35 +250,6 @@ header nav li:hover {
   }
   to {
     transform: scaleY(1.5);
-  }
-}
-header nav .active {
-  opacity: 1;
-}
-header nav .active::after {
-  content: "";
-  position: absolute;
-  top: -2vh;
-  right: initial;
-  bottom: initial;
-  left: -1.3vw;
-  width: 145%;
-  height: 162%;
-  z-index: "";
-  animation: subNavKey 0.5s ease-out;
-  filter: url(#turbTest) blur(2px);
-  border-bottom: 5px solid;
-  border-top: 5px solid;
-  backdrop-filter: opacity(0.5);
-  border-radius: 1.2rem;
-  transform-origin: center;
-}
-@keyframes subNavKey {
-  from {
-    width: 0;
-  }
-  to {
-    width: 145%;
   }
 }
 
@@ -566,27 +537,27 @@ header nav .active::after {
 }
 @media screen and (max-width: 550px) {
   .doors_bottom {
-    font-size: 7.4285714286rem;
+    font-size: 8.5714285714rem;
   }
 }
 @media screen and (min-width: 550px) and (max-width: 820px) {
   .doors_bottom {
-    font-size: 8.6666666667rem;
+    font-size: 10rem;
   }
 }
 @media screen and (min-width: 820px) and (max-width: 1080px) {
   .doors_bottom {
-    font-size: 10.4rem;
+    font-size: 12rem;
   }
 }
 @media screen and (min-width: 1080px) {
   .doors_bottom {
-    font-size: 10.4rem;
+    font-size: 12rem;
   }
 }
 @media screen and (min-width: 1700px) {
   .doors_bottom {
-    font-size: 13rem;
+    font-size: 15rem;
   }
 }
 .doors_bottom p {
@@ -1021,6 +992,12 @@ main .main_project .hide {
     padding: 2% 5% 2% 5%;
   }
 }
+@media screen and (max-width: 1080px) {
+  #about {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
 #about #subNav {
   height: 100%;
 }
@@ -1034,6 +1011,11 @@ main .main_project .hide {
   grid-template: "";
   height: 100%;
   flex-direction: column;
+}
+@media screen and (max-width: 1080px) {
+  #about #subNav ul {
+    flex-direction: initial;
+  }
 }
 #about #subNav ul li {
   position: relative;
@@ -1101,12 +1083,26 @@ main .main_project .hide {
   animation: subNavKey 0.5s ease-out;
   transform-origin: center;
 }
+@media screen and (max-width: 1080px) {
+  #about #subNav ul .active::after {
+    top: -1.5vh;
+    left: -2.5vw;
+  }
+}
 @keyframes subNavKey {
   from {
     width: 0;
   }
   to {
     width: 145%;
+  }
+}
+#about .index {
+  z-index: 1;
+}
+@media screen and (max-width: 550px) {
+  #about .index {
+    margin-top: 5vh;
   }
 }
 #about .about {
@@ -1118,8 +1114,19 @@ main .main_project .hide {
   justify-content: "";
   grid-template: 20vh 50vh/70vw;
 }
+@media screen and (max-width: 1080px) {
+  #about .about {
+    grid-template: 20vh 50vh/90vw;
+  }
+}
 #about #container_about_me {
   width: 60%;
+}
+@media screen and (max-width: 1080px) {
+  #about #container_about_me {
+    width: 100%;
+    align-self: center;
+  }
 }
 @media screen and (max-width: 550px) {
   #about #container_about_me p:first-child {
@@ -1185,6 +1192,16 @@ main .main_project .hide {
   position: relative;
   grid-template-columns: repeat(2, 1fr);
 }
+@media screen and (max-width: 1700px) {
+  #about #container_cv {
+    justify-items: initial;
+  }
+}
+@media screen and (max-width: 550px) {
+  #about #container_cv {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 #about #container_cv--education, #about #container_cv--work {
   position: relative;
 }
@@ -1208,52 +1225,63 @@ main .main_project .hide {
     padding: 0 0 2rem 0;
   }
 }
+@media screen and (max-width: 550px) {
+  #about #container_cv--education h2, #about #container_cv--work h2 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 550px) {
+  #about #container_cv--education ul, #about #container_cv--work ul {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
 #about #container_cv--education li, #about #container_cv--work li {
   list-style: circle;
 }
 @media screen and (max-width: 550px) {
   #about #container_cv--education li, #about #container_cv--work li {
-    padding: 0 0 0.6857142857rem 0;
+    padding: 0 0 0.7142857143rem 0;
   }
 }
 @media screen and (min-width: 550px) and (max-width: 820px) {
   #about #container_cv--education li, #about #container_cv--work li {
-    padding: 0 0 0.8rem 0;
+    padding: 0 0 0.8333333333rem 0;
   }
 }
 @media screen and (min-width: 820px) and (max-width: 1080px) {
   #about #container_cv--education li, #about #container_cv--work li {
-    padding: 0 0 0.96rem 0;
+    padding: 0 0 1rem 0;
   }
 }
 @media screen and (min-width: 1080px) {
   #about #container_cv--education li, #about #container_cv--work li {
-    padding: 0 0 1.2rem 0;
+    padding: 0 0 1.25rem 0;
   }
 }
 @media screen and (max-width: 550px) {
   #about #container_cv--education li h4, #about #container_cv--work li h4 {
-    font-size: 0.8571428571rem;
+    font-size: 1.0285714286rem;
   }
 }
 @media screen and (min-width: 550px) and (max-width: 820px) {
   #about #container_cv--education li h4, #about #container_cv--work li h4 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 @media screen and (min-width: 820px) and (max-width: 1080px) {
   #about #container_cv--education li h4, #about #container_cv--work li h4 {
-    font-size: 1.2rem;
+    font-size: 1.44rem;
   }
 }
 @media screen and (min-width: 1080px) {
   #about #container_cv--education li h4, #about #container_cv--work li h4 {
-    font-size: 1.2rem;
+    font-size: 1.44rem;
   }
 }
 @media screen and (min-width: 1700px) {
   #about #container_cv--education li h4, #about #container_cv--work li h4 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 #about #container_cv--education li p, #about #container_cv--work li p {
@@ -1261,31 +1289,37 @@ main .main_project .hide {
 }
 @media screen and (max-width: 550px) {
   #about #container_cv--education li p, #about #container_cv--work li p {
-    font-size: 0.5714285714rem;
+    font-size: 0.8571428571rem;
   }
 }
 @media screen and (min-width: 550px) and (max-width: 820px) {
   #about #container_cv--education li p, #about #container_cv--work li p {
-    font-size: 0.6666666667rem;
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 820px) and (max-width: 1080px) {
   #about #container_cv--education li p, #about #container_cv--work li p {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
 }
 @media screen and (min-width: 1080px) {
   #about #container_cv--education li p, #about #container_cv--work li p {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
 }
 @media screen and (min-width: 1700px) {
   #about #container_cv--education li p, #about #container_cv--work li p {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 #about #container_cv--work ul ul {
   padding-left: 3rem;
+}
+@media screen and (max-width: 550px) {
+  #about #container_cv--work ul ul {
+    margin: 0;
+    padding: 0;
+  }
 }
 #about #container_cv--work ul ul li {
   opacity: 0.7;
@@ -1321,6 +1355,13 @@ main .main_project .hide {
   z-index: "";
   cursor: pointer;
 }
+@media screen and (max-width: 550px) {
+  #about #download {
+    position: fixed;
+    bottom: 0;
+    left: 80%;
+  }
+}
 #about #download path {
   stroke-dasharray: 30;
   transition: opacity 1s;
@@ -1335,6 +1376,38 @@ main .main_project .hide {
   font-weight: 900;
   transition: opacity 0.3s;
   opacity: 0;
+}
+@media screen and (max-width: 550px) {
+  #about #download-popup {
+    font-size: 0.6857142857rem;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 820px) {
+  #about #download-popup {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1080px) {
+  #about #download-popup {
+    font-size: 0.96rem;
+  }
+}
+@media screen and (min-width: 1080px) {
+  #about #download-popup {
+    font-size: 0.96rem;
+  }
+}
+@media screen and (min-width: 1700px) {
+  #about #download-popup {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  #about #download-popup {
+    position: fixed;
+    bottom: 7%;
+    left: 75%;
+  }
 }
 #about #download:hover + #download-popup {
   opacity: 1;
@@ -1397,6 +1470,7 @@ main .main_project .hide {
 #about #container_contact--title {
   display: flex;
   align-self: center;
+  justify-content: space-between;
 }
 #about #container_contact--title h2 {
   text-transform: capitalize;
@@ -1432,7 +1506,7 @@ main .main_project .hide {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
+  z-index: 10;
   display: flex;
   color: #181818;
   background-color: rgba(24, 24, 24, 0.6705882353);
@@ -1486,7 +1560,7 @@ main .main_project .hide {
   left: initial;
   width: 0;
   height: 0;
-  z-index: "";
+  z-index: 10;
   cursor: pointer;
 }
 @media screen and (max-width: 550px) {
@@ -1516,6 +1590,8 @@ main .main_project .hide {
 }
 #about form {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 #about form fieldset {
   display: flex;
@@ -1534,6 +1610,11 @@ main .main_project .hide {
   visibility: hidden;
   min-width: 15vw;
   font-weight: 700;
+}
+@media screen and (max-width: 1080px) {
+  #about form fieldset label {
+    min-width: 35vw;
+  }
 }
 #about form fieldset label::after {
   position: absolute;
@@ -1561,27 +1642,32 @@ main .main_project .hide {
 }
 @media screen and (max-width: 550px) {
   #about form fieldset input {
-    font-size: 0.8rem;
+    font-size: 0.9714285714rem;
   }
 }
 @media screen and (min-width: 550px) and (max-width: 820px) {
   #about form fieldset input {
-    font-size: 0.9333333333rem;
+    font-size: 1.1333333333rem;
   }
 }
 @media screen and (min-width: 820px) and (max-width: 1080px) {
   #about form fieldset input {
-    font-size: 1.12rem;
+    font-size: 1.36rem;
   }
 }
 @media screen and (min-width: 1080px) {
   #about form fieldset input {
-    font-size: 1.12rem;
+    font-size: 1.36rem;
   }
 }
 @media screen and (min-width: 1700px) {
   #about form fieldset input {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 1080px) {
+  #about form fieldset input {
+    min-width: 50vw;
   }
 }
 #about form textarea {
@@ -1600,30 +1686,38 @@ main .main_project .hide {
 }
 @media screen and (max-width: 550px) {
   #about form textarea {
-    font-size: 0.8rem;
+    font-size: 0.9714285714rem;
   }
 }
 @media screen and (min-width: 550px) and (max-width: 820px) {
   #about form textarea {
-    font-size: 0.9333333333rem;
+    font-size: 1.1333333333rem;
   }
 }
 @media screen and (min-width: 820px) and (max-width: 1080px) {
   #about form textarea {
-    font-size: 1.12rem;
+    font-size: 1.36rem;
   }
 }
 @media screen and (min-width: 1080px) {
   #about form textarea {
-    font-size: 1.12rem;
+    font-size: 1.36rem;
   }
 }
 @media screen and (min-width: 1700px) {
   #about form textarea {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 1080px) {
+  #about form textarea {
+    margin: 6vh 5vw;
+    width: 80vw;
   }
 }
 #about form #submit {
+  width: fit-content;
+  align-self: center;
   padding: 0.5rem 4rem;
   font-family: Disco;
   font-weight: 900;
@@ -1633,7 +1727,6 @@ main .main_project .hide {
   color: #181818;
   border: none;
   border-radius: 0.5rem;
-  text-align: center;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -1675,11 +1768,25 @@ main .main_project .hide {
   left: 0;
   width: 6vw;
   height: 100%;
-  z-index: "";
+  z-index: 2;
   overflow: hidden;
   background-color: #181818;
   border-left: 1rem solid #EBEAEC;
   filter: blur(5px) url(#turbTest);
+}
+@media screen and (max-width: 1080px) {
+  #about-transition {
+    position: absolute;
+    top: initial;
+    right: initial;
+    bottom: -5vh;
+    left: -3vw;
+    width: 97vw;
+    height: 0;
+    z-index: "";
+    border-bottom: 1rem solid #EBEAEC;
+    border-left: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
