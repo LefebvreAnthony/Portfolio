@@ -11,10 +11,10 @@ export const AboutsContents = {
         let fragment = new DocumentFragment();
         let aboutMe = new HTMLElement("div", "container_about_me").element;
         let myCvContainer = new HTMLElement("div", "container_cv").element;
-        let myName = new HTMLElement("p").text("Hi, my name is Anthony, i'm a developper web fullStack.");
+        let myName = new HTMLElement("p").text("Hi, my name is Anthony, i'm fullStack web developper.");
         let myDesc = new HTMLElement("p");
         myDesc.attributes([["class", "soft"]]);
-        myDesc.text("Former cook i new find my happiness in this job, here are somes links to find out more about my career.");
+        myDesc.text("Former cook, i have found happiness in this new job, here are somes links to find out more about my work.");
         //*container education
         let educationContainer = new HTMLElement("div", "container_cv--education").element;
         let titleEducation = new HTMLElement("h2").text("Education");

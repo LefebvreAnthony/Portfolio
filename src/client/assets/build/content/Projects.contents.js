@@ -8,7 +8,7 @@ export const Projects = new Map([
         {
             img: "./assets/img/projects/quizzGame.png",
             h2: "Quizz Game Project",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litor",
+            desc: "3 weeks deadline project exclusively built with JavaScript. The project scope was to build a quiz web application where the user could play a random quiz or create his own throught his personal space. Each question is related to a specific category and the user can check his personal stats for each category.",
             link: "https://al.quiz.promo-105.codeur.online/index.html",
             linkGit: "https://github.com/LucasLenoir/Quizz_Game",
             technos: {
@@ -24,7 +24,7 @@ export const Projects = new Map([
         {
             img: "./assets/img/projects/formContact.png",
             h2: "Form Project",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litor",
+            desc: "Full responsive form created under a week deadline with Php. Inputs verfification on both side(front/back) ",
             link: "https://anthonyl.promo-105.codeur.online/ECF1/",
             linkGit: "https://github.com/LefebvreAnthony/ECM1",
             technos: {
@@ -39,7 +39,7 @@ export const Projects = new Map([
         {
             img: "./assets/img/projects/ohMyFood.png",
             h2: "OhMyFood",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litor",
+            desc: "Fully customised restaurant website, built exclusively with html and Sass.",
             link: "https://lefebvreanthony.github.io/P3-OC/",
             linkGit: "https://github.com/LefebvreAnthony/P3-OC",
             technos: {

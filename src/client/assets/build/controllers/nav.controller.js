@@ -1,5 +1,6 @@
 "use-strict";
 
+import { SocialAnimation } from "../animations/about.animation.js";
 import { TransitionPage } from "../animations/transition.page.animation.js";
 import { AboutView } from "../views/About.view.js";
 import { ContactView } from "../views/Contact.view.js";
@@ -35,9 +36,17 @@ export function navController() {
             AboutView();
         }, 1000);
     });
+
+    //& btn about contact
     btns[3].addEventListener("click", () => {
         setTimeout(() => {
             ContactView();
+            setTimeout(() => {
+                SocialAnimation().forEach(anim => { anim.play() });
+                let link = document.querySelectorAll("#container_contact--title li");
+                link[0].addEventListener("click", () => { window.open("https://github.com/LefebvreAnthony") });
+                link[1].addEventListener("click", () => { window.open("https://www.linkedin.com/in/anthony-lefebvre-240177176/") });
+            }, 1000);
         }, 1000);
     });
 }

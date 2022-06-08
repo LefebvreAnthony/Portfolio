@@ -618,9 +618,11 @@ main .main_project figure img {
   height: 100%;
   transform: translateX(400px);
 }
-@media screen and (max-width: 1080px) {
+@media screen and (min-width: 550px) and (max-width: 1080px) {
   main .main_project figure img {
     clip-path: none;
+    height: 70%;
+    margin: 20% 0;
   }
 }
 @media screen and (min-width: 1080px) {
@@ -952,6 +954,11 @@ main .main_project #arrow-up {
     bottom: 2%;
     left: 10%;
     top: initial;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 1080px) {
+  main .main_project #arrow-up {
+    top: -5vh;
   }
 }
 @media screen and (min-width: 1080px) and (max-width: 1700px) {

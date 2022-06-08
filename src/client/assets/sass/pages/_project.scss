@@ -23,8 +23,10 @@ main {
             }
 
             img {
-                @media screen and (max-width: map-get($breakpoints, laptops)) {
+                @media screen and (min-width: map-get($breakpoints, phone)) and (max-width: map-get($breakpoints, laptops)) {
                     clip-path: none;
+                    height: 70%;
+                    margin: 20% 0;
                 }
 
                 clip-path: url(#blob);
@@ -190,6 +192,10 @@ main {
                 bottom: 2%;
                 left: 10%;
                 top: initial;
+            }
+
+            @media screen and (min-width: map-get($breakpoints, phone)) and (max-width: map-get($breakpoints, laptops)) {
+                top: -5vh;
             }
 
             @media screen and (min-width: map-get($breakpoints, laptops)) and (max-width: map-get($breakpoints, desktops)) {
