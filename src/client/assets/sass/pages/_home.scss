@@ -58,33 +58,51 @@
     }
 
     &_top {
-        @include absolute($top: -50%, $width: 100vw, $height: 50vh, $index: 3);
+        @include absolute($top: -50%, $width: 100vw, $height: 50vh, $index: 10);
         @include display(flex, $align-items: center, $justify-content: center);
         border-bottom: double $light-color;
         background: center/cover url('../img/background/fondDoorsBottom.png');
         color: $light-color;
         text-transform: uppercase;
-        @include mediaTextSize(15rem);
+        @include mediaTextSize(13rem);
+
+        @media screen and (max-width: map-get($breakpoints, phone)) {
+            font-size: 4rem;
+        }
+
         overflow: hidden;
 
         p {
+            @media screen and (max-width: map-get($breakpoints, phone)) {
+                bottom: -10%;
+            }
+
             position: absolute;
             bottom: -20%;
         }
     }
 
     &_bottom {
-        @include absolute($bottom: -50%, $height: 50vh, $width: 100vw, $index: 3);
+        @include absolute($bottom: -50%, $height: 50vh, $width: 100vw, $index: 10);
         @include display(flex, $align-items: center, $justify-content: center);
         overflow: hidden;
         border-top: double $darkness-color;
         background: center/cover url('../img/background/fondDoorsTop.png');
         color: $darkness-color;
         text-transform: uppercase;
-        @include mediaTextSize(15rem);
+        @include mediaTextSize(13rem);
+
+        @media screen and (max-width: map-get($breakpoints, phone)) {
+            font-size: 4rem;
+        }
+
         overflow: hidden;
 
         p {
+            @media screen and (max-width: map-get($breakpoints, phone)) {
+                top: -10%;
+            }
+
             position: absolute;
             top: -20%;
         }

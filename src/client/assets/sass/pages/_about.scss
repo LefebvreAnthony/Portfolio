@@ -41,7 +41,12 @@
                 &::after {
                     @include absolute($top: -2vh, $left: -1.3vw, $width: 145%, $height: 162%, $content: "");
 
-                    @media screen and (max-width: map-get($breakpoints, laptops)) {
+                    @media screen and (max-width: map-get($breakpoints, phone)) {
+                        top: -2vh;
+                        left: -2.5vw;
+                    }
+
+                    @media screen and (min-width: map-get($breakpoints, phone)) and (max-width: map-get($breakpoints, laptops)) {
                         top: -1.5vh;
                         left: -2.5vw;
                     }
@@ -71,6 +76,7 @@
 
         @media screen and (max-width: map-get($breakpoints, laptops)) {
             grid-template: 20vh 50vh /90vw;
+            margin-top: 5vw;
         }
     }
 
@@ -370,7 +376,7 @@
             @include mediaTextSize(1.7rem);
 
             @media screen and (max-width: map-get($breakpoints, laptops)) {
-                margin: 6vh 5vw;
+                margin: 1vh 5vw 4vh 5vw;
                 width: 80vw;
             }
 
