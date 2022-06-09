@@ -21,12 +21,12 @@ mail(
     $headers
 );
 
-if(mail('anthony.lfb@hotmail.fr',
-$object,
-$message,
-$headers)) {
-    echo "mail envoyé avec succès";
-} else {
-    echo "erreur, le mail ne s'est pas envoyé";
-};
+// if(mail('anthony.lfb@hotmail.fr',
+// $object,
+// $message,
+// $headers)) {
+//     echo "mail envoyé avec succès";
+// } else {
+//     echo "erreur, le mail ne s'est pas envoyé";
+// };
 session_destroy();

@@ -15,7 +15,6 @@ export function projectController(project) {
     animContentProject().play();
 
     function trans() {
-        console.log(index);
         if (index <= Projects.size) {
 
             animTransitionContent().play();

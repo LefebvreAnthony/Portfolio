@@ -24,18 +24,18 @@ export function SvgLogoFilter() {
 
     setInterval(() => {
 
-        if (window.getComputedStyle(doorsLeft).left.split("p")[0] <= -300 || window.getComputedStyle(doorsLeft).bottom.split("p")[0] <= -300) {
-            clearInterval(lolo)
-            lolo = null;
-        } else {
-            run();
-            svg.innerHTML = `
+        // if (window.getComputedStyle(doorsLeft).left.split("p")[0] <= -300 || window.getComputedStyle(doorsLeft).bottom.split("p")[0] <= -300) {
+        //     clearInterval(lolo)
+        //     lolo = null;
+        // } else {
+        run();
+        svg.innerHTML = `
             <filter id="turbTest">
                 <feTurbulence type="turbulence" baseFrequency="${yes} ${yes}" numOctaves="3" result="turb"/>
                 <feDisplacementMap in2="turb" in="SourceGraphic" scale="10" xChannelSelector="A" yChannelSelector="A" />
             </filter>
         `;
-        }
+        // }
     }, 50)
 
     return svg;
