@@ -4,7 +4,8 @@
   "description": "Project portfolio",
   "main": "script.js",
   "scripts": {
-    "sass": "sass -w ./src/client/assets/sass/main.scss:./src/client/assets/css/style.css"
+    "sass": "sass  ./src/client/assets/sass/main.scss:./src/client/assets/css/style.css --style compressed",
+    "prefix": "postcss ./src/client/assets/css/style.css --use autoprefixer -d ./src/client/assets/css "
   },
   "repository": {
     "type": "git",
@@ -12,6 +13,7 @@
   },
   "author": "",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/LefebvreAnthony/Portfolio/issues"
   },
