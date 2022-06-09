@@ -2,7 +2,7 @@
 
 import { AnimationHome } from "../animations/home.animation.js";
 import { AboutView } from "../views/About.view.js";
-import { ProjectView } from "../views/project.view.js";
+import { ProjectView } from "../views/Project.view.js";
 
 export function homeController() {
     const btn = document.querySelectorAll('button');

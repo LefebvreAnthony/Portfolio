@@ -4,7 +4,7 @@ import { SocialAnimation } from "../animations/about.animation.js";
 import { TransitionPage } from "../animations/transition.page.animation.js";
 import { AboutView } from "../views/About.view.js";
 import { ContactView } from "../views/Contact.view.js";
-import { ProjectView } from "../views/project.view.js";
+import { ProjectView } from "../views/Project.view.js";
 
 export function navController() {
     let btns = document.querySelectorAll('header li');

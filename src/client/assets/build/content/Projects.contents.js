@@ -22,7 +22,7 @@ export const Projects = new Map([
     [
         "form",
         {
-            img: "./assets/img/projects/formContact.png",
+            img: "./assets/img/projects/FormContact.png",
             h2: "Form Project",
             desc: "Full responsive form created under a week deadline with Php. Inputs verfification on both side(front/back) ",
             link: "https://anthonyl.promo-105.codeur.online/ECF1/",
