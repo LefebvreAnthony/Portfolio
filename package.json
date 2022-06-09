@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Project portfolio",
-  "main": "script.js",
+  "main": "./src/client/script.js",
   "scripts": {
     "sass": "sass  ./src/client/assets/sass/main.scss:./src/client/assets/css/style.css --style compressed",
     "prefix": "postcss ./src/client/assets/css/style.css --use autoprefixer -d ./src/client/assets/css "
